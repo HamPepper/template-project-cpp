@@ -1,0 +1,73 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "msvc",
+            "description": "MSVC multi-config on Windows",
+            "binaryDir": "${sourceDir}/build",
+            "generator": "Visual Studio 17 2022",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "OFF",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "debug",
+            "description": "Debug config on Unix",
+            "binaryDir": "${sourceDir}/build/Debug",
+            "generator": "Unix Makefiles",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
+            },
+            "condition": {
+                "type": "matches",
+                "string": "${hostSystemName}",
+                "regex": "Linux|Darwin"
+            }
+        },
+        {
+            "name": "release",
+            "description": "Release config on Unix",
+            "inherits": "debug",
+            "binaryDir": "${sourceDir}/build/Release",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "compdb",
+            "description": "Generate compile_commands.json on Windows",
+            "binaryDir": "${sourceDir}/build_compdb",
+            "generator": "Ninja Multi-Config",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug",
+            "description": "Debug build with MSVC",
+            "configurePreset": "msvc",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release",
+            "description": "Release build with MSVC",
+            "configurePreset": "msvc",
+            "configuration": "Release"
+        }
+    ]
+}
