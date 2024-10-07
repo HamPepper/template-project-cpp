@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD 17)
 # executables #
 ###############
 
-add_executable(${PROJECT_NAME} "src/main.cpp")
+add_executable(${PROJECT_NAME} "src/main.cpp" "src/Interpreter.cpp")
 target_include_directories(${PROJECT_NAME} PUBLIC "inc")
 
 
