@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 3.27...3.29)
 project(tpcpp CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_EXTENSIONS off)
+# ^to force gcc into `-std=c++17`, instead of the default `-std=gnu++17`
+set(CMAKE_CXX_STANDARD_REQUIRED on)
+# ^so that compile_commands.json contains `-std=c++17`
 
 
 #############
