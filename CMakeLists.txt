@@ -13,6 +13,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED on)
 # libraries #
 #############
 
+add_library(tpcpp-object STATIC "src/Object.cpp")
+target_include_directories(tpcpp-object PUBLIC "inc")
+
 
 ###############
 # executables #
@@ -23,6 +26,25 @@ target_include_directories(${PROJECT_NAME} PUBLIC "inc")
 
 
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+
+
+########
+# test #
+########
+
+enable_testing()
+
+
+# for tpcpp-object
+file(GLOB src_test_tpcpp_object CONFIGURE_DEPENDS "test/tpcpp-object/*.cpp")
+foreach(s ${src_test_tpcpp_object})
+    get_filename_component(name ${s} NAME_WE)
+
+    add_executable(${name} ${s})
+    target_link_libraries(${name} tpcpp-object)
+
+    add_test(NAME ${name} COMMAND ${name})
+endforeach(s ${src_test_tpcpp_object})
 
 
 ################
