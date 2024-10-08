@@ -4,9 +4,9 @@ project(template-project-cpp CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS off)
-# ^to force gcc into `-std=c++17`, instead of the default `-std=gnu++17`
+# ^to force gcc into `-std=c++20`, instead of the default `-std=gnu++20`
 set(CMAKE_CXX_STANDARD_REQUIRED on)
-# ^so that compile_commands.json contains `-std=c++17`
+# ^so that compile_commands.json contains `-std=c++20`
 
 
 #############
