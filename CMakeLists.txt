@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.27...3.29)
 
-project(tpcpp CXX)
+project(template-project-cpp CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_EXTENSIONS off)
@@ -21,11 +21,11 @@ target_include_directories(tpcpp-object PUBLIC "inc")
 # executables #
 ###############
 
-add_executable(${PROJECT_NAME} "src/main.cpp" "src/Interpreter.cpp")
-target_include_directories(${PROJECT_NAME} PUBLIC "inc")
+add_executable(tpcpp "src/main.cpp" "src/Interpreter.cpp")
+target_include_directories(tpcpp PUBLIC "inc")
 
 
-install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+install(TARGETS tpcpp DESTINATION bin)
 
 
 ########
