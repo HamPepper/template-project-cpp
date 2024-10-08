@@ -23,14 +23,22 @@
           };
 
           helperB = prev.writeShellScriptBin "B" ''
+            cd ''${DIRENV_DIR:1}
             cmake --preset debug && cmake --build build/Debug
           '';
           helperC = prev.writeShellScriptBin "C" ''
+            cd ''${DIRENV_DIR:1}
             rm -rf build
           '';
           helperD = prev.writeShellScriptBin "D" ''
+            cd ''${DIRENV_DIR:1}
             cmake --preset debug
             compdb -p build/Debug/ list > compile_commands.json
+          '';
+          helperT = prev.writeShellScriptBin "T" ''
+            cd ''${DIRENV_DIR:1}
+            cmake --preset debug && cmake --build build/Debug
+            ctest --test-dir build/Debug
           '';
         };
     in
@@ -94,6 +102,11 @@
               helperB
               helperC
               helperD
+              helperT
+
+              # doc
+              doxygen
+              graphviz
             ] ++ config.pre-commit.settings.enabledPackages;
 
             shellHook = ''
