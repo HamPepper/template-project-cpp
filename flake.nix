@@ -9,9 +9,12 @@
 
     git-hooks.url = "github:cachix/git-hooks.nix";
     git-hooks.inputs.nixpkgs.follows = "nixpkgs";
+
+    dream2nix.url = "github:nix-community/dream2nix";
+    dream2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-parts, git-hooks, ... } @ inputs:
+  outputs = { self, nixpkgs, flake-parts, git-hooks, dream2nix, ... } @ inputs:
     let
       overlayThis = final: prev:
         {
@@ -39,7 +42,8 @@
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
       perSystem =
-        { system, inputs', pkgs', config, ... }: {
+        { system, inputs', pkgs', config, ... }:
+        rec {
           _module.args.pkgs' = import self.inputs.nixpkgs {
             inherit system;
             overlays = [ overlayThis ];
@@ -59,7 +63,24 @@
             };
           };
 
+          packages = {
+            pyprojectTpcpp = dream2nix.lib.evalModules {
+              packageSets.nixpkgs = pkgs';
+              modules = [
+                ./pyproject.nix
+                {
+                  paths.projectRoot = ./.;
+                  paths.projectRootFile = "flake.nix";
+                  paths.package = ./.;
+                }
+              ];
+            };
+            tpcpp = pkgs'.tpcpp;
+          };
+
           devShells.default = pkgs'.mkShell {
+            inputsFrom = [ packages.pyprojectTpcpp.devShell ];
+
             name = "template-project-cpp-dev";
 
             buildInputs = with pkgs'; [
@@ -67,7 +88,6 @@
               gdb
 
               # utilities
-              compdb
               dos2unix
               time # measure memory usage, use \time to invoke in zsh
 
@@ -85,8 +105,6 @@
               #export WSLENV=$WSLENV:PATH
             '';
           };
-
-          packages.tpcpp = pkgs'.tpcpp;
         };
       # end of perSystem
     });

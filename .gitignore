@@ -6,9 +6,15 @@ build
 build_compdb
 result
 Testing
+
+__pypackages__
+
 .cache
 .ccls-cache
+.dream2nix
 
 # dev files
 compile_commands.json
+
 .pre-commit-config.yaml
+.pdm-python
