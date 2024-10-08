@@ -24,6 +24,7 @@ struct Callable {
 };
 
 // Object: predicates //////////////////////////////////////////////////////////
+bool isInt(const Object &obj);
 bool isNumber(const Object &obj);
 bool isCallable(const Object &obj);
 

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.27...3.29)
 
 project(template-project-cpp CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_EXTENSIONS off)
 # ^to force gcc into `-std=c++17`, instead of the default `-std=gnu++17`
 set(CMAKE_CXX_STANDARD_REQUIRED on)
@@ -42,6 +42,8 @@ foreach(s ${src_test_tpcpp_object})
 
     add_executable(${name} ${s})
     target_link_libraries(${name} tpcpp-object)
+
+    target_include_directories(${name} PUBLIC "test")
 
     add_test(NAME ${name} COMMAND ${name})
 endforeach(s ${src_test_tpcpp_object})
