@@ -23,20 +23,20 @@
           };
 
           helperB = prev.writeShellScriptBin "B" ''
-            cd ''${DIRENV_DIR:1}
+            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
             cmake --preset debug && cmake --build build/Debug
           '';
           helperC = prev.writeShellScriptBin "C" ''
-            cd ''${DIRENV_DIR:1}
+            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
             rm -rf build
           '';
           helperD = prev.writeShellScriptBin "D" ''
-            cd ''${DIRENV_DIR:1}
+            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
             cmake --preset debug
             compdb -p build/Debug/ list > compile_commands.json
           '';
           helperT = prev.writeShellScriptBin "T" ''
-            cd ''${DIRENV_DIR:1}
+            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
             cmake --preset debug && cmake --build build/Debug
             ctest --test-dir build/Debug
           '';

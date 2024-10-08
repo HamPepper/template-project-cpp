@@ -1,0 +1,29 @@
+name: "CI"
+
+on:
+    pull_request:
+    push:
+        branches:
+            - master
+
+jobs:
+    build-linux:
+        if: "!contains(github.event.head_commit.message, 'skip ci')"
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+            - uses: DeterminateSystems/nix-installer-action@v14
+            - uses: DeterminateSystems/magic-nix-cache-action@v8
+            - run: nix develop --no-update-lock-file -c B
+            - run: nix develop --no-update-lock-file -c T
+            - run: nix develop --no-update-lock-file -c D
+            - run: nix build ".#tpcpp"
+            - run: nix develop --no-update-lock-file -c pre-commit run --all-files
+            - uses: JamesIves/github-pages-deploy-action@v4
+              with:
+                  folder: build/Debug/doc/html
+
+permissions:
+    contents: write
