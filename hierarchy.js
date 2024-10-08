@@ -6,6 +6,6 @@ var hierarchy =
     ] ],
     [ "tpcpp::Interpreter", "classtpcpp_1_1Interpreter.html", null ],
     [ "tpcpp::Ts", null, [
-      [ "tpcpp::overloadUnary< Ts >", "structtpcpp_1_1overloadUnary.html", null ]
+      [ "tpcpp::OpCollector< Ts >", "structtpcpp_1_1OpCollector.html", null ]
     ] ]
 ];
