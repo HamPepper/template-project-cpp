@@ -21,4 +21,7 @@ template <class... Ts> struct OpCollector : Ts... {
   using Ts::operator()...;
 };
 
+// to make ccls happy
+template <class... Ts> OpCollector(Ts...) -> OpCollector<Ts...>;
+
 } // namespace tpcpp
