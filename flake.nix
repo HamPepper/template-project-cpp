@@ -94,6 +94,7 @@
             buildInputs = with pkgs'; [
               cmake
               gdb
+              cgdb
 
               # utilities
               dos2unix
@@ -108,14 +109,11 @@
               doxygen
               graphviz
             ] ++ config.pre-commit.settings.enabledPackages;
+            hardeningDisable = [ "fortify" ];
 
             shellHook = ''
               ${config.pre-commit.installationScript}
               export PATH=$(pwd)/tools:$(pwd)/build/Debug:$PATH
-
-              # env vars set by devShells are not propagated to vscode?
-              # install direnv the VS Code extension seems to fix this
-              #export WSLENV=$WSLENV:PATH
             '';
           };
         };

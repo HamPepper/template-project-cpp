@@ -24,7 +24,8 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
-                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install"
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/install",
+                "CMAKE_CXX_FLAGS_DEBUG": "-g -O0"
             },
             "condition": {
                 "type": "matches",
