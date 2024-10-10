@@ -187,7 +187,7 @@ $(function(){initNavTree('Scanner_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">default</span>:</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">if</span> (isDigit(c)) {</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      number();</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isAlpha(c, <span class="keyword">true</span>)) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isAlpha(c)) {</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      identifier();</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      m_interpreter.error(<span class="stringliteral">&quot;Unexpected character.&quot;</span>);</div>
@@ -279,21 +279,20 @@ $(function(){initNavTree('Scanner_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keywordtype">bool</span> Scanner::isDigit(<span class="keywordtype">char</span> c) { <span class="keywordflow">return</span> c &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;9&#39;</span>; }</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keywordtype">bool</span> Scanner::isAlpha(<span class="keywordtype">char</span> c, <span class="keywordtype">bool</span> allowSpecial) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span><span class="keywordtype">bool</span> Scanner::isAlpha(<span class="keywordtype">char</span> c) {</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="comment">// clang-format off</span></div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordflow">return</span> (c &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;z&#39;</span>) ||</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>         (c &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; c &lt;= <span class="charliteral">&#39;Z&#39;</span>) ||</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>          c == <span class="charliteral">&#39;_&#39;</span> ||</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>         (c == <span class="charliteral">&#39;$&#39;</span> &amp;&amp; allowSpecial)</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>         ;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  <span class="comment">// clang-format off</span></div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keywordtype">bool</span> Scanner::isAlphaNumeric(<span class="keywordtype">char</span> c) {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keywordflow">return</span> isAlpha(c) || isDigit(c);</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>}</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>          c == <span class="charliteral">&#39;_&#39;</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>         ;</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>}</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="keywordtype">bool</span> Scanner::isAlphaNumeric(<span class="keywordtype">char</span> c) {</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keywordflow">return</span> isAlpha(c) || isDigit(c);</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
