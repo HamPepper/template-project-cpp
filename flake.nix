@@ -38,7 +38,7 @@
           helperT = prev.writeShellScriptBin "T" ''
             if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
             cmake --preset debug && cmake --build build/Debug
-            ctest --test-dir build/Debug
+            ctest --test-dir build/Debug --output-on-failure
           '';
         };
     in

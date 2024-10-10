@@ -1,3 +1,6 @@
+#include <cmath>
+#include <limits>
+
 #include "Object.hpp"
 
 #include "Exceptions.hpp"
@@ -76,8 +79,7 @@ bool operator==(const Object &lhs, const Object &rhs) {
     if constexpr (std::is_same_v<T1, CallablePtr> ||
                   std::is_same_v<T2, CallablePtr>)
       return false;
-    else
-      return l == r;
+    return l == r;
   };
   auto hdlCC = [](CallablePtr l, CallablePtr r) -> bool {
     return l.get() == r.get();
@@ -101,6 +103,85 @@ bool operator<(const Object &lhs, const Object &rhs) {
 
 bool operator<=(const Object &lhs, const Object &rhs) {
   return lhs < rhs || lhs == rhs;
+}
+
+// binary operators, arithmetics
+Object operator+(const Object &lhs, const Object &rhs) {
+  auto hdlGen = []<typename T1, typename T2>(T1 l, T2 r) -> Object {
+    if constexpr (std::is_same_v<T1, CallablePtr> ||
+                  std::is_same_v<T2, CallablePtr>)
+      throw RuntimeError{
+          "Binary operator '+' cannot be applied to a callable."};
+    return l + r;
+  };
+  return std::visit(hdlGen, lhs, rhs);
+}
+
+Object operator-(const Object &lhs, const Object &rhs) {
+  auto hdlGen = []<typename T1, typename T2>(T1 l, T2 r) -> Object {
+    if constexpr (std::is_same_v<T1, CallablePtr> ||
+                  std::is_same_v<T2, CallablePtr>)
+      throw RuntimeError{
+          "Binary operator '-' cannot be applied to a callable."};
+    return l - r;
+  };
+  return std::visit(hdlGen, lhs, rhs);
+}
+
+Object operator*(const Object &lhs, const Object &rhs) {
+  auto hdlGen = []<typename T1, typename T2>(T1 l, T2 r) -> Object {
+    if constexpr (std::is_same_v<T1, CallablePtr> ||
+                  std::is_same_v<T2, CallablePtr>)
+      throw RuntimeError{
+          "Binary operator '*' cannot be applied to a callable."};
+    return l * r;
+  };
+  return std::visit(hdlGen, lhs, rhs);
+}
+
+Object operator/(const Object &lhs, const Object &rhs) {
+  auto hdlNumber = []<typename T1, typename T2>(T1 l, T2 r) -> Object
+    requires(std::is_arithmetic_v<T1> && std::is_arithmetic_v<T2>)
+  {
+    if (r == 0)
+      return std::numeric_limits<double>::quiet_NaN();
+    return l / r;
+  };
+
+  auto hdlGen = [](auto, auto) -> Object {
+    throw RuntimeError{"Binary operator '/' cannot be applied to a callable."};
+  };
+  return std::visit(OpCollector{hdlNumber, hdlGen}, lhs, rhs);
+}
+
+// special treatment for power: we want to get back an integral number when both
+// inputs are integral
+static long powerInt(long x, long p) {
+  if (p == 0)
+    return 1;
+  if (p == 1)
+    return x;
+
+  long tmp = powerInt(x, p / 2);
+  if (p % 2 == 0)
+    return tmp * tmp;
+  return x * tmp * tmp;
+};
+
+Object power(const Object &lhs, const Object &rhs) {
+  auto hdlInt = []<typename T1, typename T2>(T1 l, T2 r) -> Object
+    requires(std::is_integral_v<T1> && std::is_integral_v<T2>)
+  { return powerInt(l, r); };
+
+  auto hdlNumber = []<typename T1, typename T2>(T1 l, T2 r) -> Object
+    requires(std::is_arithmetic_v<T1> && std::is_arithmetic_v<T2> &&
+             (!std::is_integral_v<T1> || !std::is_integral_v<T2>))
+  { return std::pow(l, r); };
+
+  auto hdlGen = [](auto, auto) -> Object {
+    throw RuntimeError{"'power' function cannot be applied to a callable."};
+  };
+  return std::visit(OpCollector{hdlInt, hdlNumber, hdlGen}, lhs, rhs);
 }
 
 } // namespace tpcpp
