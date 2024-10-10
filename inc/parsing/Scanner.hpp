@@ -54,7 +54,7 @@ private:
   // helpers
   bool isAtEnd();
   bool isDigit(char c);
-  bool isAlpha(char c, bool allowSpecial = false);
+  bool isAlpha(char c);
   bool isAlphaNumeric(char c);
 };
 

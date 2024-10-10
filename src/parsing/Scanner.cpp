@@ -87,7 +87,7 @@ void Scanner::scanToken() {
   default:
     if (isDigit(c)) {
       number();
-    } else if (isAlpha(c, true)) {
+    } else if (isAlpha(c)) {
       identifier();
     } else {
       m_interpreter.error("Unexpected character.");
@@ -185,12 +185,11 @@ bool Scanner::isAtEnd() { return m_current == m_source.length(); }
 
 bool Scanner::isDigit(char c) { return c >= '0' && c <= '9'; }
 
-bool Scanner::isAlpha(char c, bool allowSpecial) {
+bool Scanner::isAlpha(char c) {
   // clang-format off
   return (c >= 'a' && c <= 'z') ||
          (c >= 'A' && c <= 'Z') ||
-          c == '_' ||
-         (c == '$' && allowSpecial)
+          c == '_'
          ;
   // clang-format off
 }
