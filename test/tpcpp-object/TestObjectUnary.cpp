@@ -1,5 +1,3 @@
-#include <iostream>
-
 #pragma push_macro("NDEBUG")
 #undef NDEBUG // to shut up unused variable warning in release build
 #include <cassert>

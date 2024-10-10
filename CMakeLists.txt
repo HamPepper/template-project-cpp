@@ -19,13 +19,20 @@ target_compile_options(tpcpp-object PRIVATE
     $<$<CXX_COMPILER_ID:MSVC>:/wd4702 /wd4804 /wd4805>
 )
 
+file(GLOB src_tpcpp_parsing CONFIGURE_DEPENDS "src/parsing/*.cpp")
+add_library(tpcpp-interpreter STATIC
+    ${src_tpcpp_parsing}
+    "src/Interpreter.cpp")
+target_include_directories(tpcpp-interpreter PUBLIC "inc")
+target_link_libraries(tpcpp-interpreter PUBLIC tpcpp-object)
+
 
 ###############
 # executables #
 ###############
 
-add_executable(tpcpp "src/main.cpp" "src/Interpreter.cpp")
-target_include_directories(tpcpp PUBLIC "inc")
+add_executable(tpcpp "src/main.cpp")
+target_link_libraries(tpcpp tpcpp-interpreter)
 
 
 install(TARGETS tpcpp DESTINATION bin)
@@ -49,7 +56,21 @@ foreach(s ${src_test_tpcpp_object})
     target_include_directories(${name} PUBLIC "test")
 
     add_test(NAME ${name} COMMAND ${name})
-endforeach(s ${src_test_tpcpp_object})
+endforeach()
+
+
+# for tpcpp-interpreter
+file(GLOB src_test_tpcpp_interpreter CONFIGURE_DEPENDS "test/tpcpp-interpreter/*.cpp")
+foreach(s ${src_test_tpcpp_interpreter})
+    get_filename_component(name ${s} NAME_WE)
+
+    add_executable(${name} ${s})
+    target_link_libraries(${name} tpcpp-interpreter)
+
+    target_include_directories(${name} PUBLIC "test")
+
+    add_test(NAME ${name} COMMAND ${name})
+endforeach()
 
 
 ################
