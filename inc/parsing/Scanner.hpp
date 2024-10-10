@@ -20,6 +20,7 @@ const std::unordered_map<std::string, TokenType> RESERVED_KEYWORDS{
 };
 // clang-format on
 
+/// @brief The tpcpp scanner/lexer.
 class Scanner {
 public:
   Scanner(Interpreter &interpreter, std::string source);

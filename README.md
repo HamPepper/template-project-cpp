@@ -3,8 +3,9 @@
 [![github CI 状态](https://github.com/HamPepper/template-project-cpp/actions/workflows/main.yml/badge.svg)](https://github.com/HamPepper/template-project-cpp/actions?query=workflow%3ACI)
 
 C++ 项目模板。
-本项目包含一个简单的命令行计算器。该计算器基于 Robert Nystrom 的 [_Crafting Interpreters_](https://craftinginterpreters.com/) 一书中的代码实现。
-项目文档地址：https://hampepper.github.io/template-project-cpp/
+本项目包含一个简单的命令行计算器 `tpcpp`。
+该计算器基于 Robert Nystrom 的 [_Crafting Interpreters_](https://craftinginterpreters.com/) 一书中的代码实现。
+项目文档地址：[hampepper.github.io/template-project-cpp](https://hampepper.github.io/template-project-cpp)
 
 
 ## 目标

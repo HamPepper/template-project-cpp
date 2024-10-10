@@ -4,6 +4,7 @@
 
 namespace tpcpp {
 
+/// @brief The tpcpp interpreter, which is a simple calculator.
 class Interpreter {
 public:
   Interpreter();
