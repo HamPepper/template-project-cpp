@@ -4,10 +4,14 @@
 
 namespace tpcpp {
 
+// public methods //////////////////////////////////////////////////////////////
 Scanner::Scanner(Interpreter &interpreter, std::string source)
     : m_interpreter(interpreter), m_source(source), m_tokens(), m_start(0),
       m_current(0) {}
 
+/// @brief Scan the source code stored in `m_source`.
+///
+/// @return a vector of Tokens.
 ListOfTokens Scanner::scanTokens() {
   while (!isAtEnd()) {
     // the beginning of the next lexeme
@@ -19,6 +23,7 @@ ListOfTokens Scanner::scanTokens() {
   return m_tokens;
 }
 
+// private methods /////////////////////////////////////////////////////////////
 //////////////
 // scanning //
 //////////////

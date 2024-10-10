@@ -11,6 +11,7 @@ static void handlerCtrlC(int sig);
 // public methods //////////////////////////////////////////////////////////////
 Interpreter::Interpreter() : m_hadError(false), m_hadRuntimeError(false) {}
 
+/// @brief Start the inteprter REPL loop.
 void Interpreter::run() {
   std::signal(SIGINT, handlerCtrlC); // install handler
 
@@ -32,6 +33,9 @@ void Interpreter::run() {
   }
 }
 
+/// @brief Indicate a parsing-time error to the inteprter.
+///
+/// @param[in] message The error message.
 void Interpreter::error(const std::string &message) {
   (void)message;
   return;
