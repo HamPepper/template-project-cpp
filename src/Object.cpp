@@ -6,6 +6,8 @@
 #include "Exceptions.hpp"
 #include "visitors/helpers.hpp"
 
+#pragma warning(disable : 4702)
+
 namespace tpcpp {
 
 // Object: predicates //////////////////////////////////////////////////////////
@@ -32,9 +34,11 @@ bool toBool(const Object &obj) {
 }
 
 long toLong(const Object &obj) {
-  auto hdlNumber = [](auto o) -> long { return o; };
+  auto hdlNumber = []<typename T>(T o) -> long
+    requires(std::is_arithmetic_v<T>)
+  { return static_cast<long>(o); };
   auto hdlCallable = [](CallablePtr o) -> long {
-    return reinterpret_cast<long>(o.get());
+    return static_cast<long>(reinterpret_cast<uintptr_t>(o.get()));
   };
   return std::visit(OpCollector{hdlNumber, hdlCallable}, obj);
 }
@@ -42,7 +46,7 @@ long toLong(const Object &obj) {
 double toDouble(const Object &obj) {
   auto hdlNumber = [](auto o) -> double { return o; };
   auto hdlCallable = [](CallablePtr o) -> double {
-    return static_cast<double>(reinterpret_cast<long>(o.get()));
+    return static_cast<double>(reinterpret_cast<uintptr_t>(o.get()));
   };
   return std::visit(OpCollector{hdlNumber, hdlCallable}, obj);
 }
@@ -66,11 +70,12 @@ std::string toString(const Object &obj) {
 bool operator!(const Object &rhs) { return !toBool(rhs); }
 
 Object operator-(const Object &rhs) {
+  auto hdlBool = [](bool o) -> Object { return -static_cast<long>(o); };
   auto hdlNumber = [](auto o) -> Object { return -o; };
   auto hdlCallable = [](CallablePtr) -> Object {
     throw RuntimeError{"Unary operator '-' cannot be applied to a callable."};
   };
-  return std::visit(OpCollector{hdlNumber, hdlCallable}, rhs);
+  return std::visit(OpCollector{hdlBool, hdlNumber, hdlCallable}, rhs);
 }
 
 // binary operators, comparisons
@@ -79,7 +84,10 @@ bool operator==(const Object &lhs, const Object &rhs) {
     if constexpr (std::is_same_v<T1, CallablePtr> ||
                   std::is_same_v<T2, CallablePtr>)
       return false;
+#pragma warning(push)
+#pragma warning(disable : 4805)
     return l == r;
+#pragma warning(pop)
   };
   auto hdlCC = [](CallablePtr l, CallablePtr r) -> bool {
     return l.get() == r.get();
@@ -145,7 +153,10 @@ Object operator/(const Object &lhs, const Object &rhs) {
   {
     if (r == 0)
       return std::numeric_limits<double>::quiet_NaN();
+#pragma warning(push)
+#pragma warning(disable : 4804)
     return l / r;
+#pragma warning(pop)
   };
 
   auto hdlGen = [](auto, auto) -> Object {
