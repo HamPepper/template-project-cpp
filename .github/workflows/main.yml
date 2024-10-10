@@ -25,5 +25,18 @@ jobs:
               with:
                   folder: build/Debug/doc/html
 
+    build-win-preset-dev:
+        if: "!contains(github.event.head_commit.message, 'skip ci')"
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+            - uses: ilammy/msvc-dev-cmd@v1
+            - run: cmake --preset msvc
+            - run: cmake --build --preset debug
+            - run: ctest --test-dir build -C Debug --output-on-failure
+
+
 permissions:
     contents: write

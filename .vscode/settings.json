@@ -1,0 +1,21 @@
+{
+    "clang-format.executable": "${workspaceRoot}/tools/clang-format-18.exe",
+    "clangd.arguments": [
+        "-header-insertion=never"
+    ],
+    "editor.formatOnType": false,
+    "editor.formatOnSave": true,
+    "[markdown]": {
+        "editor.formatOnSave": false
+    },
+    "[cmake]": {
+        "editor.formatOnSave": false
+    },
+    "[json]": {
+        "editor.formatOnSave": false
+    },
+
+    "cSpell.words": [
+        "tpcpp"
+    ]
+}

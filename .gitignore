@@ -7,6 +7,7 @@ build_compdb
 result
 
 __pypackages__
+*.egg-info
 
 .cache
 .ccls-cache
