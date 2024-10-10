@@ -1,7 +1,11 @@
-#include <cassert>
 #include <cmath>
 #include <iostream>
 #include <limits>
+
+#pragma push_macro("NDEBUG")
+#undef NDEBUG // to shut up unused variable warning in release build
+#include <cassert>
+#pragma pop_macro("NDEBUG")
 
 #include "Exceptions.hpp"
 #include "Object.hpp"
@@ -12,15 +16,13 @@ namespace tpcpp {
 void testBoolAddDouble() {
   Object b = true;
   Object d = 3.14;
-  auto result = std::get<double>(b + d);
-  assert(result - 4.14 <= 1e-6);
+  assert(std::abs(std::get<double>(b + d) - 4.14) <= 1e-10); // due to precision
 }
 
 void testBoolAddLong() {
   Object b = true;
   Object l = 233;
-  auto result = std::get<long>(b + l);
-  assert(result == 234);
+  assert(std::get<long>(b + l) == 234);
 }
 
 void testDoubleAddCallable() {
@@ -36,8 +38,6 @@ void testDoubleAddCallable() {
            std::string("Binary operator '+' cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 
@@ -54,8 +54,6 @@ void testCallableAddCallable() {
            std::string("Binary operator '+' cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 
@@ -63,6 +61,7 @@ void testBoolSubLong() {
   Object b = true;
   Object l = 233;
   auto result = std::get<long>(b - l);
+  (void)result;
   assert(result == -232);
 }
 
@@ -79,16 +78,13 @@ void testDoubleSubCallable() {
            std::string("Binary operator '-' cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 
 void testBoolMulLong() {
   Object b = true;
   Object l = 233;
-  auto result = std::get<long>(b * l);
-  assert(result == 233);
+  assert(std::get<long>(b * l) == 233);
 }
 
 void testDoubleMulCallable() {
@@ -104,22 +100,18 @@ void testDoubleMulCallable() {
            std::string("Binary operator '*' cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 
 void testBoolDivLong() {
   Object b = true;
   Object l = 233;
-  auto result = std::get<long>(b / l);
-  assert(result == 0);
+  assert(std::get<long>(b / l) == 0);
 }
 
 void testLongDivByZero() {
   Object l = 233;
-  auto result = std::get<double>(l / 0);
-  assert(std::isnan(result));
+  assert(std::isnan(std::get<double>(l / 0)));
 }
 
 void testDoubleDivCallable() {
@@ -135,30 +127,25 @@ void testDoubleDivCallable() {
            std::string("Binary operator '/' cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 
 void testLongPowerBool() {
   Object b = true;
   Object l = 233;
-  auto result = std::get<long>(power(l, b));
-  assert(result == 233);
+  assert(std::get<long>(power(l, b)) == 233);
 }
 
 void testLongPowerLong() {
   Object l1 = 3;
   Object l2 = 4;
-  auto result = std::get<long>(power(l1, l2));
-  assert(result == 81L);
+  assert(std::get<long>(power(l1, l2)) == 81L);
 }
 
 void testDoublePowerLong() {
   Object d = 3.0;
   Object l = 4;
-  auto result = std::get<double>(power(d, l));
-  assert(result == 81.0);
+  assert(std::get<double>(power(d, l)) == 81.0);
 }
 
 void testDoublePowerCallable() {
@@ -174,8 +161,6 @@ void testDoublePowerCallable() {
            std::string("'power' function cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 

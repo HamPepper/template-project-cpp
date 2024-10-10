@@ -1,5 +1,9 @@
-#include <cassert>
 #include <iostream>
+
+#pragma push_macro("NDEBUG")
+#undef NDEBUG // to shut up unused variable warning in release build
+#include <cassert>
+#pragma pop_macro("NDEBUG")
 
 #include "Exceptions.hpp"
 #include "Object.hpp"
@@ -19,8 +23,6 @@ void testCallableNegate() {
            std::string("Unary operator '-' cannot be applied to a callable."));
   }
 
-  if (!exceptionThrown)
-    std::cerr << "Expected exception was not thrown!" << std::endl;
   assert(exceptionThrown == true);
 }
 
