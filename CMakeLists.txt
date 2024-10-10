@@ -15,6 +15,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED on)
 
 add_library(tpcpp-object STATIC "src/Object.cpp")
 target_include_directories(tpcpp-object PUBLIC "inc")
+target_compile_options(tpcpp-object PRIVATE
+    $<$<CXX_COMPILER_ID:MSVC>:/wd4702 /wd4804 /wd4805>
+)
 
 
 ###############
@@ -56,7 +59,7 @@ endforeach(s ${src_test_tpcpp_object})
 # treat warnings as errors for all targets
 get_property(current_targets DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY BUILDSYSTEM_TARGETS)
 foreach(tgt ${current_targets})
-    target_compile_options(${tgt} PUBLIC
+    target_compile_options(${tgt} PRIVATE
         $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>
         $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall -Wextra -Wpedantic -Werror>
     )

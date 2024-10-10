@@ -6,8 +6,6 @@
 #include "Exceptions.hpp"
 #include "visitors/helpers.hpp"
 
-#pragma warning(disable : 4702)
-
 namespace tpcpp {
 
 // Object: predicates //////////////////////////////////////////////////////////
@@ -84,10 +82,7 @@ bool operator==(const Object &lhs, const Object &rhs) {
     if constexpr (std::is_same_v<T1, CallablePtr> ||
                   std::is_same_v<T2, CallablePtr>)
       return false;
-#pragma warning(push)
-#pragma warning(disable : 4805)
     return l == r;
-#pragma warning(pop)
   };
   auto hdlCC = [](CallablePtr l, CallablePtr r) -> bool {
     return l.get() == r.get();
@@ -153,10 +148,7 @@ Object operator/(const Object &lhs, const Object &rhs) {
   {
     if (r == 0)
       return std::numeric_limits<double>::quiet_NaN();
-#pragma warning(push)
-#pragma warning(disable : 4804)
     return l / r;
-#pragma warning(pop)
   };
 
   auto hdlGen = [](auto, auto) -> Object {
