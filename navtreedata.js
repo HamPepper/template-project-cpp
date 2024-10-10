@@ -26,6 +26,12 @@ var NAVTREE =
 [
   [ "template-project-cpp", "index.html", [
     [ "目标", "index.html#autotoc_md1", null ],
+    [ "调试（Debug）配置与技巧", "md_doc_2debug.html", [
+      [ "NixOS + NeoVim + GDB", "md_doc_2debug.html#autotoc_md3", [
+        [ "允许 GDB attach 到任意进程", "md_doc_2debug.html#autotoc_md4", null ],
+        [ "配置 NeoVim", "md_doc_2debug.html#autotoc_md5", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
