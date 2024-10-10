@@ -1,7 +1,7 @@
 var indexSectionsWithContent =
 {
-  0: "acginoprt允到目调配",
-  1: "cior",
+  0: "acginoprst允到目调配",
+  1: "ciorst",
   2: "cpt调"
 };
 
