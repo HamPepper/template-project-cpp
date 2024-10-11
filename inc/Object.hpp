@@ -5,16 +5,39 @@
 #include <variant>
 #include <vector>
 
+/// @namespace tpcpp
+/// @brief All tpcpp classes are placed in this namespace.
 namespace tpcpp {
 
 // Object //////////////////////////////////////////////////////////////////////
+
 struct Callable;
+
+/// @typedef tpcpp::CallablePtr
+/// @brief A `std::shared_ptr` type for `tpcpp::Callable`.
 using CallablePtr = std::shared_ptr<Callable>;
 
+/// @typedef tpcpp::Object
+/// @brief A `std::variant` type used in expression evaluation.
+///
+/// It may contain one of the following types:
+/// - `bool`
+/// - `long`
+/// - `double`
+/// - `tpcpp::CallablePtr`
+///
+/// @note
+/// It is the only type used in expression evaluation.
 using Object = std::variant<bool, long, double, CallablePtr>;
+
 using ListOfObjects = std::vector<Object>;
 
 // Callable ////////////////////////////////////////////////////////////////////
+
+/// @brief An interface for callable objects.
+///
+/// @warning
+/// This is a pure virtual class.
 struct Callable {
   ~Callable() = default;
 

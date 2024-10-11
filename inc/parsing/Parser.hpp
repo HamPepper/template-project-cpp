@@ -15,10 +15,11 @@ concept IsTokenType = std::is_same_v<T, TokenType>;
 
 class Interpreter;
 
-/// @brief A recursive-descendent parser.
+/// @brief The tpcpp parser.
 ///
-/// Here's the grammar. Top-most rule has the lowest priority.
+/// This is a recursive-descendent parser.
 ///
+/// Here's the grammar:
 /// ```
 /// program        -> expression
 /// expression     -> assignment
@@ -39,12 +40,15 @@ class Interpreter;
 /// ```
 ///
 /// @note
+/// Top-most rule has the lowest priority.
+///
+/// @remark
 /// Left-associative rules do not contain a reference to themselves.
 ///
-/// @note
+/// @remark
 /// In recursive-descent, right-associative rules do reference themselves.
 ///
-/// @note
+/// @remark
 /// In tpcpp, assignment is an expression, instead of a statement.
 /// assignment is also right-associative.
 class Parser {
@@ -54,6 +58,10 @@ public:
   ListOfExprs parse();
 
 private:
+  /// @brief Exception thrown when a parsing error occurs.
+  ///
+  /// @note
+  /// Catched within the parser. Unexposed.
   class ParseException : public std::exception {};
 
   Interpreter &m_interpreter;

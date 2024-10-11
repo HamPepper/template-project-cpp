@@ -37,6 +37,10 @@ void Interpreter::run() {
 }
 
 /// @brief Evaluate a given string.
+///
+/// @param[in] source The source code to evaluate.
+///
+/// @return The result of the evaluation, which is an `tpcpp::Object`.
 Object Interpreter::evaluate(const std::string &source) {
   Scanner scanner(*this, source);
   auto tokens = scanner.scanTokens();
