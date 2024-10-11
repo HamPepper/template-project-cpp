@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "tpcpp", null, [
+    [ "tpcpp", "namespacetpcpp.html", [
       [ "Assign", "structtpcpp_1_1Assign.html", null ],
       [ "Binary", "structtpcpp_1_1Binary.html", null ],
       [ "Box", "classtpcpp_1_1Box.html", "classtpcpp_1_1Box" ],

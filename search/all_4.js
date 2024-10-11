@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['gdb_0',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md3',1,'']]],
-  ['gdb_20attach_20到任意进程_1',['允许 GDB attach 到任意进程',['../md_doc_2debug.html#autotoc_md4',1,'']]],
-  ['grouping_2',['Grouping',['../structtpcpp_1_1Grouping.html',1,'tpcpp']]]
+  ['factor_0',['factor',['../classtpcpp_1_1Parser.html#ad8f555110c2ff61b82b15903f139fee6',1,'tpcpp::Parser']]],
+  ['finishcall_1',['finishCall',['../classtpcpp_1_1Parser.html#a7cdfcd8ed87d350a7af5261b0d8beca3',1,'tpcpp::Parser']]]
 ];

@@ -94,95 +94,156 @@ $(function(){initNavTree('classtpcpp_1_1Parser.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="classtpcpp_1_1Parser-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">tpcpp::Parser Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>A recursive-descendent parser.  
+<p>The tpcpp parser.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Parser_8hpp_source.html">Parser.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for tpcpp::Parser:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtpcpp_1_1Parser__coll__graph.svg" width="171" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtpcpp_1_1Parser_1_1ParseException.html">ParseException</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exception thrown when a parsing error occurs.  <a href="classtpcpp_1_1Parser_1_1ParseException.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1dbb4d2227c1a05624d21ca723a29e03" id="r_a1dbb4d2227c1a05624d21ca723a29e03"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1dbb4d2227c1a05624d21ca723a29e03">Parser</a> (<a class="el" href="classtpcpp_1_1Interpreter.html">Interpreter</a> &amp;<a class="el" href="classtpcpp_1_1Box.html">interpreter</a>, <a class="el" href="classtpcpp_1_1Box.html">const</a> ListOfTokens &amp;<a class="el" href="classtpcpp_1_1Box.html">tokens</a>)</td></tr>
-<tr class="separator:a1dbb4d2227c1a05624d21ca723a29e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2923635437cd22b12ef8a80a0317da95" id="r_a2923635437cd22b12ef8a80a0317da95"><td class="memItemLeft" align="right" valign="top">ListOfExprs&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2923635437cd22b12ef8a80a0317da95">parse</a> ()</td></tr>
-<tr class="memdesc:a2923635437cd22b12ef8a80a0317da95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse input tokens into expressions.  <br /></td></tr>
+<tr class="memitem:a2923635437cd22b12ef8a80a0317da95" id="r_a2923635437cd22b12ef8a80a0317da95"><td class="memItemLeft" align="right" valign="top"><a id="a2923635437cd22b12ef8a80a0317da95" name="a2923635437cd22b12ef8a80a0317da95"></a>
+ListOfExprs&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> ()</td></tr>
+<tr class="memdesc:a2923635437cd22b12ef8a80a0317da95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse input tokens into expressions. <br /></td></tr>
 <tr class="separator:a2923635437cd22b12ef8a80a0317da95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab360ca7eadc7d307f6749742619deb8d" id="r_ab360ca7eadc7d307f6749742619deb8d"><td class="memItemLeft" align="right" valign="top"><a id="ab360ca7eadc7d307f6749742619deb8d" name="ab360ca7eadc7d307f6749742619deb8d"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>expression</b> ()</td></tr>
+<tr class="memdesc:ab360ca7eadc7d307f6749742619deb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>expression -&gt; assignment</code> <br /></td></tr>
+<tr class="separator:ab360ca7eadc7d307f6749742619deb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ae8c70ee3408bc6defa9ddc25e2ffb" id="r_a06ae8c70ee3408bc6defa9ddc25e2ffb"><td class="memItemLeft" align="right" valign="top"><a id="a06ae8c70ee3408bc6defa9ddc25e2ffb" name="a06ae8c70ee3408bc6defa9ddc25e2ffb"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>assignment</b> ()</td></tr>
+<tr class="memdesc:a06ae8c70ee3408bc6defa9ddc25e2ffb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>assignment -&gt; IDENTIFIER "=" assignment | logic_or</code> <br /></td></tr>
+<tr class="separator:a06ae8c70ee3408bc6defa9ddc25e2ffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6244f5f098c990b7b48d3878f17b9bf2" id="r_a6244f5f098c990b7b48d3878f17b9bf2"><td class="memItemLeft" align="right" valign="top"><a id="a6244f5f098c990b7b48d3878f17b9bf2" name="a6244f5f098c990b7b48d3878f17b9bf2"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>logicOr</b> ()</td></tr>
+<tr class="memdesc:a6244f5f098c990b7b48d3878f17b9bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implemet <code>logic_or -&gt; logic_and ( "|" logic_and )*</code> <br /></td></tr>
+<tr class="separator:a6244f5f098c990b7b48d3878f17b9bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58e742444f01ef64c265b5f60bfab9cb" id="r_a58e742444f01ef64c265b5f60bfab9cb"><td class="memItemLeft" align="right" valign="top"><a id="a58e742444f01ef64c265b5f60bfab9cb" name="a58e742444f01ef64c265b5f60bfab9cb"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>logicAnd</b> ()</td></tr>
+<tr class="memdesc:a58e742444f01ef64c265b5f60bfab9cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implemet <code>logic_and -&gt; equality ( "&amp;" equality )*</code> <br /></td></tr>
+<tr class="separator:a58e742444f01ef64c265b5f60bfab9cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac601ef3f2f5e697b00c14d09cdbd76ca" id="r_ac601ef3f2f5e697b00c14d09cdbd76ca"><td class="memItemLeft" align="right" valign="top"><a id="ac601ef3f2f5e697b00c14d09cdbd76ca" name="ac601ef3f2f5e697b00c14d09cdbd76ca"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>equality</b> ()</td></tr>
+<tr class="memdesc:ac601ef3f2f5e697b00c14d09cdbd76ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>equality -&gt; comparison ( ( "!=" | "==" ) comparison )*</code> <br /></td></tr>
+<tr class="separator:ac601ef3f2f5e697b00c14d09cdbd76ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a6502cec9a03236874bf1416a8ec263" id="r_a4a6502cec9a03236874bf1416a8ec263"><td class="memItemLeft" align="right" valign="top"><a id="a4a6502cec9a03236874bf1416a8ec263" name="a4a6502cec9a03236874bf1416a8ec263"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>comparison</b> ()</td></tr>
+<tr class="memdesc:a4a6502cec9a03236874bf1416a8ec263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>comparison -&gt; term ( ( "&gt;" | "&gt;=" | "&lt;" | "&lt;=" ) term )*</code> <br /></td></tr>
+<tr class="separator:a4a6502cec9a03236874bf1416a8ec263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac958f2987aa614587ba8071bbc56d40d" id="r_ac958f2987aa614587ba8071bbc56d40d"><td class="memItemLeft" align="right" valign="top"><a id="ac958f2987aa614587ba8071bbc56d40d" name="ac958f2987aa614587ba8071bbc56d40d"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>term</b> ()</td></tr>
+<tr class="memdesc:ac958f2987aa614587ba8071bbc56d40d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implemet <code>term -&gt; factor ( ( "+" | "-" ) factor )*</code> <br /></td></tr>
+<tr class="separator:ac958f2987aa614587ba8071bbc56d40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8f555110c2ff61b82b15903f139fee6" id="r_ad8f555110c2ff61b82b15903f139fee6"><td class="memItemLeft" align="right" valign="top"><a id="ad8f555110c2ff61b82b15903f139fee6" name="ad8f555110c2ff61b82b15903f139fee6"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>factor</b> ()</td></tr>
+<tr class="memdesc:ad8f555110c2ff61b82b15903f139fee6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>factor -&gt; exponent ( ( "*" | "/" ) exponent )*</code> <br /></td></tr>
+<tr class="separator:ad8f555110c2ff61b82b15903f139fee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a6273e9b024e761ae39513db6954501" id="r_a7a6273e9b024e761ae39513db6954501"><td class="memItemLeft" align="right" valign="top"><a id="a7a6273e9b024e761ae39513db6954501" name="a7a6273e9b024e761ae39513db6954501"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>exponent</b> ()</td></tr>
+<tr class="memdesc:a7a6273e9b024e761ae39513db6954501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implemet <code>exponent -&gt; unary ( "^" unary )?</code> <br /></td></tr>
+<tr class="separator:a7a6273e9b024e761ae39513db6954501"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3049f93cf4fa1adbc78917b24c8eb973" id="r_a3049f93cf4fa1adbc78917b24c8eb973"><td class="memItemLeft" align="right" valign="top"><a id="a3049f93cf4fa1adbc78917b24c8eb973" name="a3049f93cf4fa1adbc78917b24c8eb973"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>unary</b> ()</td></tr>
+<tr class="memdesc:a3049f93cf4fa1adbc78917b24c8eb973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>unary -&gt; ( "!" | "-" ) unary | call</code> <br /></td></tr>
+<tr class="separator:a3049f93cf4fa1adbc78917b24c8eb973"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ecd1e30c1dc2eca6250ee7c5e678ae9" id="r_a5ecd1e30c1dc2eca6250ee7c5e678ae9"><td class="memItemLeft" align="right" valign="top"><a id="a5ecd1e30c1dc2eca6250ee7c5e678ae9" name="a5ecd1e30c1dc2eca6250ee7c5e678ae9"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>call</b> ()</td></tr>
+<tr class="memdesc:a5ecd1e30c1dc2eca6250ee7c5e678ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>call -&gt; primary ( "(" arguments? ")" )*</code> <br /></td></tr>
+<tr class="separator:a5ecd1e30c1dc2eca6250ee7c5e678ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cdfcd8ed87d350a7af5261b0d8beca3" id="r_a7cdfcd8ed87d350a7af5261b0d8beca3"><td class="memItemLeft" align="right" valign="top"><a id="a7cdfcd8ed87d350a7af5261b0d8beca3" name="a7cdfcd8ed87d350a7af5261b0d8beca3"></a>
+Expr&#160;</td><td class="memItemRight" valign="bottom"><b>finishCall</b> (<a class="el" href="classtpcpp_1_1Box.html">const</a> Expr &amp;callee)</td></tr>
+<tr class="memdesc:a7cdfcd8ed87d350a7af5261b0d8beca3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implement <code>arguments -&gt; expression ( "," expression )*</code> <br /></td></tr>
+<tr class="separator:a7cdfcd8ed87d350a7af5261b0d8beca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc760e93b6186a044a4582f538e161a1" id="r_afc760e93b6186a044a4582f538e161a1"><td class="memItemLeft" align="right" valign="top">Expr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc760e93b6186a044a4582f538e161a1">primary</a> ()</td></tr>
+<tr class="separator:afc760e93b6186a044a4582f538e161a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A recursive-descendent parser. </p>
-<p>Here's the grammar. Top-most rule has the lowest priority.</p>
-<div class="fragment"><div class="line"><a class="code hl_class" href="classtpcpp_1_1Box.html">program</a>        -&gt; expression</div>
-<div class="line">expression     -&gt; assignment</div>
-<div class="line">assignment     -&gt; IDENTIFIER <span class="stringliteral">&quot;=&quot;</span> assignment | <a class="code hl_class" href="classtpcpp_1_1Box.html">logic_or</a></div>
+<div class="textblock"><p>The tpcpp parser. </p>
+<p>This is a recursive-descendent parser.</p>
+<p>Here's the grammar: </p><div class="fragment"><div class="line"><a class="code hl_class" href="classtpcpp_1_1Box.html">program</a>        -&gt; <a class="code hl_function" href="#ab360ca7eadc7d307f6749742619deb8d">expression</a></div>
+<div class="line"><a class="code hl_function" href="#ab360ca7eadc7d307f6749742619deb8d">expression</a>     -&gt; <a class="code hl_function" href="#a06ae8c70ee3408bc6defa9ddc25e2ffb">assignment</a></div>
+<div class="line"><a class="code hl_function" href="#a06ae8c70ee3408bc6defa9ddc25e2ffb">assignment</a>     -&gt; IDENTIFIER <span class="stringliteral">&quot;=&quot;</span> <a class="code hl_function" href="#a06ae8c70ee3408bc6defa9ddc25e2ffb">assignment</a> | <a class="code hl_class" href="classtpcpp_1_1Box.html">logic_or</a></div>
 <div class="line"><a class="code hl_class" href="classtpcpp_1_1Box.html">logic_or</a>       -&gt; <a class="code hl_class" href="classtpcpp_1_1Box.html">logic_and</a> ( <span class="stringliteral">&quot;|&quot;</span> <a class="code hl_class" href="classtpcpp_1_1Box.html">logic_and</a> )*</div>
-<div class="line"><a class="code hl_class" href="classtpcpp_1_1Box.html">logic_and</a>      -&gt; equality ( <span class="stringliteral">&quot;&amp;&quot;</span> equality )*</div>
-<div class="line">equality       -&gt; comparison ( ( <span class="stringliteral">&quot;!=&quot;</span> | <span class="stringliteral">&quot;==&quot;</span> ) comparison )*</div>
-<div class="line">comparison     -&gt; term ( ( <span class="stringliteral">&quot;&gt;&quot;</span> | <span class="stringliteral">&quot;&gt;=&quot;</span> | <span class="stringliteral">&quot;&lt;&quot;</span> | <span class="stringliteral">&quot;&lt;=&quot;</span> ) term )*</div>
-<div class="line">term           -&gt; factor ( ( <span class="stringliteral">&quot;+&quot;</span> | <span class="stringliteral">&quot;-&quot;</span> ) factor )*</div>
-<div class="line">factor         -&gt; exponent ( ( <span class="stringliteral">&quot;*&quot;</span> | <span class="stringliteral">&quot;/&quot;</span> ) exponent )*</div>
-<div class="line">exponent       -&gt; unary ( <span class="stringliteral">&quot;^&quot;</span> unary )*</div>
-<div class="line">unary          -&gt; ( <span class="stringliteral">&quot;!&quot;</span> | <span class="stringliteral">&quot;-&quot;</span> )? unary | call</div>
-<div class="line">call           -&gt; primary ( <span class="stringliteral">&quot;(&quot;</span> arguments? <span class="stringliteral">&quot;)&quot;</span> )*</div>
-<div class="line">  arguments    -&gt; expression ( <span class="stringliteral">&quot;,&quot;</span> expression )*</div>
-<div class="line">primary        -&gt; INTEGER | FLOAT | <span class="stringliteral">&quot;true&quot;</span> | <span class="stringliteral">&quot;false&quot;</span></div>
-<div class="line">                  | <span class="stringliteral">&quot;(&quot;</span> expression <span class="stringliteral">&quot;)&quot;</span></div>
+<div class="line"><a class="code hl_class" href="classtpcpp_1_1Box.html">logic_and</a>      -&gt; <a class="code hl_function" href="#ac601ef3f2f5e697b00c14d09cdbd76ca">equality</a> ( <span class="stringliteral">&quot;&amp;&quot;</span> <a class="code hl_function" href="#ac601ef3f2f5e697b00c14d09cdbd76ca">equality</a> )*</div>
+<div class="line"><a class="code hl_function" href="#ac601ef3f2f5e697b00c14d09cdbd76ca">equality</a>       -&gt; <a class="code hl_function" href="#a4a6502cec9a03236874bf1416a8ec263">comparison</a> ( ( <span class="stringliteral">&quot;!=&quot;</span> | <span class="stringliteral">&quot;==&quot;</span> ) <a class="code hl_function" href="#a4a6502cec9a03236874bf1416a8ec263">comparison</a> )*</div>
+<div class="line"><a class="code hl_function" href="#a4a6502cec9a03236874bf1416a8ec263">comparison</a>     -&gt; <a class="code hl_function" href="#ac958f2987aa614587ba8071bbc56d40d">term</a> ( ( <span class="stringliteral">&quot;&gt;&quot;</span> | <span class="stringliteral">&quot;&gt;=&quot;</span> | <span class="stringliteral">&quot;&lt;&quot;</span> | <span class="stringliteral">&quot;&lt;=&quot;</span> ) <a class="code hl_function" href="#ac958f2987aa614587ba8071bbc56d40d">term</a> )*</div>
+<div class="line"><a class="code hl_function" href="#ac958f2987aa614587ba8071bbc56d40d">term</a>           -&gt; <a class="code hl_function" href="#ad8f555110c2ff61b82b15903f139fee6">factor</a> ( ( <span class="stringliteral">&quot;+&quot;</span> | <span class="stringliteral">&quot;-&quot;</span> ) <a class="code hl_function" href="#ad8f555110c2ff61b82b15903f139fee6">factor</a> )*</div>
+<div class="line"><a class="code hl_function" href="#ad8f555110c2ff61b82b15903f139fee6">factor</a>         -&gt; <a class="code hl_function" href="#a7a6273e9b024e761ae39513db6954501">exponent</a> ( ( <span class="stringliteral">&quot;*&quot;</span> | <span class="stringliteral">&quot;/&quot;</span> ) <a class="code hl_function" href="#a7a6273e9b024e761ae39513db6954501">exponent</a> )*</div>
+<div class="line"><a class="code hl_function" href="#a7a6273e9b024e761ae39513db6954501">exponent</a>       -&gt; <a class="code hl_function" href="#a3049f93cf4fa1adbc78917b24c8eb973">unary</a> ( <span class="stringliteral">&quot;^&quot;</span> <a class="code hl_function" href="#a3049f93cf4fa1adbc78917b24c8eb973">unary</a> )*</div>
+<div class="line"><a class="code hl_function" href="#a3049f93cf4fa1adbc78917b24c8eb973">unary</a>          -&gt; ( <span class="stringliteral">&quot;!&quot;</span> | <span class="stringliteral">&quot;-&quot;</span> )? <a class="code hl_function" href="#a3049f93cf4fa1adbc78917b24c8eb973">unary</a> | <a class="code hl_function" href="#a5ecd1e30c1dc2eca6250ee7c5e678ae9">call</a></div>
+<div class="line"><a class="code hl_function" href="#a5ecd1e30c1dc2eca6250ee7c5e678ae9">call</a>           -&gt; <a class="code hl_function" href="#afc760e93b6186a044a4582f538e161a1">primary</a> ( <span class="stringliteral">&quot;(&quot;</span> arguments? <span class="stringliteral">&quot;)&quot;</span> )*</div>
+<div class="line">  arguments    -&gt; <a class="code hl_function" href="#ab360ca7eadc7d307f6749742619deb8d">expression</a> ( <span class="stringliteral">&quot;,&quot;</span> <a class="code hl_function" href="#ab360ca7eadc7d307f6749742619deb8d">expression</a> )*</div>
+<div class="line"><a class="code hl_function" href="#afc760e93b6186a044a4582f538e161a1">primary</a>        -&gt; INTEGER | FLOAT | <span class="stringliteral">&quot;true&quot;</span> | <span class="stringliteral">&quot;false&quot;</span></div>
+<div class="line">                  | <span class="stringliteral">&quot;(&quot;</span> <a class="code hl_function" href="#ab360ca7eadc7d307f6749742619deb8d">expression</a> <span class="stringliteral">&quot;)&quot;</span></div>
 <div class="line">                  | IDENTIFIER</div>
 <div class="ttc" id="aclasstpcpp_1_1Box_html"><div class="ttname"><a href="classtpcpp_1_1Box.html">tpcpp::Box</a></div><div class="ttdoc">Boxing for all Expr classes.</div><div class="ttdef"><b>Definition</b> <a href="Box_8hpp_source.html#l00013">Box.hpp:13</a></div></div>
-</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Left-associative rules do not contain a reference to themselves.</dd>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_a06ae8c70ee3408bc6defa9ddc25e2ffb"><div class="ttname"><a href="#a06ae8c70ee3408bc6defa9ddc25e2ffb">tpcpp::Parser::assignment</a></div><div class="ttdeci">Expr assignment()</div><div class="ttdoc">Implement assignment -&gt; IDENTIFIER &quot;=&quot; assignment | logic_or</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00040">Parser.cpp:40</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_a3049f93cf4fa1adbc78917b24c8eb973"><div class="ttname"><a href="#a3049f93cf4fa1adbc78917b24c8eb973">tpcpp::Parser::unary</a></div><div class="ttdeci">Expr unary()</div><div class="ttdoc">Implement unary -&gt; ( &quot;!&quot; | &quot;-&quot; ) unary | call</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00175">Parser.cpp:175</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_a4a6502cec9a03236874bf1416a8ec263"><div class="ttname"><a href="#a4a6502cec9a03236874bf1416a8ec263">tpcpp::Parser::comparison</a></div><div class="ttdeci">Expr comparison()</div><div class="ttdoc">Implement comparison -&gt; term ( ( &quot;&gt;&quot; | &quot;&gt;=&quot; | &quot;&lt;&quot; | &quot;&lt;=&quot; ) term )*</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00109">Parser.cpp:109</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_a5ecd1e30c1dc2eca6250ee7c5e678ae9"><div class="ttname"><a href="#a5ecd1e30c1dc2eca6250ee7c5e678ae9">tpcpp::Parser::call</a></div><div class="ttdeci">Expr call()</div><div class="ttdoc">Implement call -&gt; primary ( &quot;(&quot; arguments? &quot;)&quot; )*</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00186">Parser.cpp:186</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_a7a6273e9b024e761ae39513db6954501"><div class="ttname"><a href="#a7a6273e9b024e761ae39513db6954501">tpcpp::Parser::exponent</a></div><div class="ttdeci">Expr exponent()</div><div class="ttdoc">Implemet exponent -&gt; unary ( &quot;^&quot; unary )?</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00162">Parser.cpp:162</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_ab360ca7eadc7d307f6749742619deb8d"><div class="ttname"><a href="#ab360ca7eadc7d307f6749742619deb8d">tpcpp::Parser::expression</a></div><div class="ttdeci">Expr expression()</div><div class="ttdoc">Implement expression -&gt; assignment</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00037">Parser.cpp:37</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_ac601ef3f2f5e697b00c14d09cdbd76ca"><div class="ttname"><a href="#ac601ef3f2f5e697b00c14d09cdbd76ca">tpcpp::Parser::equality</a></div><div class="ttdeci">Expr equality()</div><div class="ttdoc">Implement equality -&gt; comparison ( ( &quot;!=&quot; | &quot;==&quot; ) comparison )*</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00085">Parser.cpp:85</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_ac958f2987aa614587ba8071bbc56d40d"><div class="ttname"><a href="#ac958f2987aa614587ba8071bbc56d40d">tpcpp::Parser::term</a></div><div class="ttdeci">Expr term()</div><div class="ttdoc">Implemet term -&gt; factor ( ( &quot;+&quot; | &quot;-&quot; ) factor )*</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00136">Parser.cpp:136</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_ad8f555110c2ff61b82b15903f139fee6"><div class="ttname"><a href="#ad8f555110c2ff61b82b15903f139fee6">tpcpp::Parser::factor</a></div><div class="ttdeci">Expr factor()</div><div class="ttdoc">Implement factor -&gt; exponent ( ( &quot;*&quot; | &quot;/&quot; ) exponent )*</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00149">Parser.cpp:149</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Parser_html_afc760e93b6186a044a4582f538e161a1"><div class="ttname"><a href="#afc760e93b6186a044a4582f538e161a1">tpcpp::Parser::primary</a></div><div class="ttdeci">Expr primary()</div><div class="ttdef"><b>Definition</b> <a href="Parser_8cpp_source.html#l00219">Parser.cpp:219</a></div></div>
+</div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>Top-most rule has the lowest priority.</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Left-associative rules do not contain a reference to themselves.</dd>
 <dd>
 In recursive-descent, right-associative rules do reference themselves.</dd>
 <dd>
 In tpcpp, assignment is an expression, instead of a statement. assignment is also right-associative. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Parser_8hpp_source.html#l00050">50</a> of file <a class="el" href="Parser_8hpp_source.html">Parser.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1dbb4d2227c1a05624d21ca723a29e03" name="a1dbb4d2227c1a05624d21ca723a29e03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dbb4d2227c1a05624d21ca723a29e03">&#9670;&#160;</a></span>Parser()</h2>
+<p class="definition">Definition at line <a class="el" href="Parser_8hpp_source.html#l00054">54</a> of file <a class="el" href="Parser_8hpp_source.html">Parser.hpp</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="afc760e93b6186a044a4582f538e161a1" name="afc760e93b6186a044a4582f538e161a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc760e93b6186a044a4582f538e161a1">&#9670;&#160;</a></span>primary()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">tpcpp::Parser::Parser </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classtpcpp_1_1Interpreter.html">Interpreter</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>interpreter</em>, </span></td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classtpcpp_1_1Box.html">const</a> ListOfTokens &amp;</td>          <td class="paramname"><span class="paramname"><em>tokens</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Parser_8cpp_source.html#l00012">12</a> of file <a class="el" href="Parser_8cpp_source.html">Parser.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2923635437cd22b12ef8a80a0317da95" name="a2923635437cd22b12ef8a80a0317da95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2923635437cd22b12ef8a80a0317da95">&#9670;&#160;</a></span>parse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ListOfExprs tpcpp::Parser::parse </td>
+          <td class="memname">Expr tpcpp::Parser::primary </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-
-<p>Parse input tokens into expressions. </p>
-
-<p class="definition">Definition at line <a class="el" href="Parser_8cpp_source.html#l00016">16</a> of file <a class="el" href="Parser_8cpp_source.html">Parser.cpp</a>.</p>
+<p>Implement: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#afc760e93b6186a044a4582f538e161a1">primary</a> -&gt; INTEGER | FLOAT | <span class="stringliteral">&quot;true&quot;</span> | <span class="stringliteral">&quot;false&quot;</span> |</div>
+<div class="line">           | <span class="stringliteral">&quot;(&quot;</span> <a class="code hl_function" href="#ab360ca7eadc7d307f6749742619deb8d">expression</a> <span class="stringliteral">&quot;)&quot;</span></div>
+<div class="line">           | IDENTIFIER</div>
+</div><!-- fragment --> 
+<p class="definition">Definition at line <a class="el" href="Parser_8cpp_source.html#l00219">219</a> of file <a class="el" href="Parser_8cpp_source.html">Parser.cpp</a>.</p>
 
 </div>
 </div>
@@ -195,7 +256,7 @@ In tpcpp, assignment is an expression, instead of a statement. assignment is als
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>tpcpp</b></li><li class="navelem"><a class="el" href="classtpcpp_1_1Parser.html">Parser</a></li>
+    <li class="navelem"><a class="el" href="namespacetpcpp.html">tpcpp</a></li><li class="navelem"><a class="el" href="classtpcpp_1_1Parser.html">Parser</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

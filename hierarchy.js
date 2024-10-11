@@ -6,6 +6,7 @@ var hierarchy =
     [ "tpcpp::Call", "structtpcpp_1_1Call.html", null ],
     [ "tpcpp::Callable", "structtpcpp_1_1Callable.html", null ],
     [ "std::exception", null, [
+      [ "tpcpp::Parser::ParseException", "classtpcpp_1_1Parser_1_1ParseException.html", null ],
       [ "tpcpp::RuntimeError", "structtpcpp_1_1RuntimeError.html", null ]
     ] ],
     [ "tpcpp::Grouping", "structtpcpp_1_1Grouping.html", null ],

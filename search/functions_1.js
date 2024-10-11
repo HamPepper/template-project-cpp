@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['error_0',['error',['../classtpcpp_1_1Interpreter.html#a2276ab36d6189c142082b2ac9696e05a',1,'tpcpp::Interpreter']]],
-  ['evaluate_1',['evaluate',['../classtpcpp_1_1Interpreter.html#ae890f0724e478409becfced78fba29f2',1,'tpcpp::Interpreter']]]
+  ['box_0',['Box',['../classtpcpp_1_1Box.html#a7e464b0ce7fe8c474ab2298d84c7de9e',1,'tpcpp::Box::Box(T &amp;&amp;obj)'],['../classtpcpp_1_1Box.html#a5948626d53ad71b80f1771cecbf6bac9',1,'tpcpp::Box::Box(const Box &amp;other)']]]
 ];

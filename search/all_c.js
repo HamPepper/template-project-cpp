@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['template_20project_20cpp_0',['template-project-cpp',['../index.html',1,'']]],
-  ['token_1',['Token',['../structtpcpp_1_1Token.html',1,'tpcpp']]],
-  ['tpcpp_3a_3aistokentype_2',['IsTokenType',['../concepttpcpp_1_1IsTokenType.html',1,'tpcpp']]]
+  ['scanner_0',['Scanner',['../classtpcpp_1_1Scanner.html',1,'tpcpp']]],
+  ['scantokens_1',['scanTokens',['../classtpcpp_1_1Scanner.html#afa0e728b32c9ab92e52077616c1ae495',1,'tpcpp::Scanner']]]
 ];

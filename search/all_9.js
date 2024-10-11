@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['parse_0',['parse',['../classtpcpp_1_1Parser.html#a2923635437cd22b12ef8a80a0317da95',1,'tpcpp::Parser']]],
-  ['parser_1',['Parser',['../classtpcpp_1_1Parser.html',1,'tpcpp']]],
-  ['project_20cpp_2',['template-project-cpp',['../index.html',1,'']]]
+  ['object_0',['Object',['../namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796',1,'tpcpp']]],
+  ['opcollector_1',['OpCollector',['../structtpcpp_1_1OpCollector.html',1,'tpcpp']]],
+  ['operator_2a_2',['operator*',['../classtpcpp_1_1Box.html#a71a6dc06458f18a0174360b264e55bf9',1,'tpcpp::Box']]]
 ];

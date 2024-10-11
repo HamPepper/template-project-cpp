@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['scanner_0',['Scanner',['../classtpcpp_1_1Scanner.html',1,'tpcpp']]],
-  ['scantokens_1',['scanTokens',['../classtpcpp_1_1Scanner.html#afa0e728b32c9ab92e52077616c1ae495',1,'tpcpp::Scanner']]]
+  ['run_0',['run',['../classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973',1,'tpcpp::Interpreter']]],
+  ['runtimeerror_1',['RuntimeError',['../structtpcpp_1_1RuntimeError.html',1,'tpcpp']]]
 ];

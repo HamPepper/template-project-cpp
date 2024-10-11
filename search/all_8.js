@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['opcollector_0',['OpCollector',['../structtpcpp_1_1OpCollector.html',1,'tpcpp']]],
-  ['operator_2a_1',['operator*',['../classtpcpp_1_1Box.html#a71a6dc06458f18a0174360b264e55bf9',1,'tpcpp::Box']]]
+  ['neovim_0',['配置 NeoVim',['../md_doc_2debug.html#autotoc_md5',1,'']]],
+  ['neovim_20gdb_1',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md3',1,'']]],
+  ['nixos_20neovim_20gdb_2',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md3',1,'']]]
 ];
