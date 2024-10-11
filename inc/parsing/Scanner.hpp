@@ -1,7 +1,6 @@
 #pragma once
 
 #include <string>
-#include <unordered_map>
 
 #include "parsing/Token.hpp"
 #include "parsing/TokenType.hpp"
@@ -9,16 +8,6 @@
 namespace tpcpp {
 
 class Interpreter;
-
-// clang-format off
-const std::unordered_map<std::string, TokenType> RESERVED_KEYWORDS{
-  {"and",      TokenType::AND},
-  {"false",    TokenType::FALSE},
-  {"not",      TokenType::BANG},
-  {"or",       TokenType::OR},
-  {"true",     TokenType::TRUE},
-};
-// clang-format on
 
 /// @brief The tpcpp scanner/lexer.
 class Scanner {

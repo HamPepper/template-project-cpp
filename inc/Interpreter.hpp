@@ -2,6 +2,8 @@
 
 #include <string>
 
+#include "Object.hpp"
+
 namespace tpcpp {
 
 /// @brief The tpcpp interpreter, which is a simple calculator.
@@ -12,7 +14,7 @@ public:
   ~Interpreter() = default;
 
   void run();
-  // Object evaluate(const std::string& expr);
+  Object evaluate(const std::string &expr);
 
   void error(const std::string &message);
   // void runtimeError(const RuntimeError& error);

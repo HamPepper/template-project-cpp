@@ -1,8 +1,17 @@
+#include <unordered_map>
+
 #include "Interpreter.hpp"
 
 #include "parsing/Scanner.hpp"
 
 namespace tpcpp {
+
+// clang-format off
+const std::unordered_map<std::string, TokenType> gReservedKeywords {
+  {"false",    TokenType::FALSE},
+  {"true",     TokenType::TRUE},
+};
+// clang-format on
 
 // public methods //////////////////////////////////////////////////////////////
 Scanner::Scanner(Interpreter &interpreter, std::string source)
@@ -24,10 +33,8 @@ ListOfTokens Scanner::scanTokens() {
 }
 
 // private methods /////////////////////////////////////////////////////////////
-//////////////
-// scanning //
-//////////////
 
+// scanning
 void Scanner::scanToken() {
   char c = advance();
   switch (c) {
@@ -85,13 +92,12 @@ void Scanner::scanToken() {
     break; // skip whitespaces and EOL indicators
 
   default:
-    if (isDigit(c)) {
+    if (isDigit(c))
       number();
-    } else if (isAlpha(c)) {
+    else if (isAlpha(c))
       identifier();
-    } else {
+    else
       m_interpreter.error("Unexpected character.");
-    }
     break;
   }
 }
@@ -113,11 +119,8 @@ void Scanner::addToken(TokenType type, std::string literal) {
   }
 }
 
-/////////////////
-// look aheads //
-/////////////////
+// look aheads
 // we look maximally 2 characters ahead
-
 // get m_source[m_current], then increment m_current
 char Scanner::advance() { return m_source[m_current++]; }
 
@@ -144,10 +147,7 @@ bool Scanner::match(char expected) {
   return true;
 }
 
-///////////////////////
-// specific-scanners //
-///////////////////////
-
+// specific-scanners
 void Scanner::number() {
   bool isFloat = false;
   while (isDigit(peek()))
@@ -173,14 +173,11 @@ void Scanner::identifier() {
   size_t count = m_current - m_start;
   auto identifier = m_source.substr(m_start, count);
 
-  auto it = RESERVED_KEYWORDS.find(identifier);
-  addToken(it == RESERVED_KEYWORDS.end() ? TokenType::IDENTIFIER : it->second);
+  auto it = gReservedKeywords.find(identifier);
+  addToken(it == gReservedKeywords.end() ? TokenType::IDENTIFIER : it->second);
 }
 
-/////////////
-// helpers //
-/////////////
-
+// helpers
 bool Scanner::isAtEnd() { return m_current == m_source.length(); }
 
 bool Scanner::isDigit(char c) { return c >= '0' && c <= '9'; }

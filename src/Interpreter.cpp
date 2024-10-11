@@ -3,18 +3,21 @@
 #include <csignal>
 #include <iostream>
 
+#include "parsing/Parser.hpp"
+#include "parsing/Scanner.hpp"
+
 namespace tpcpp {
 
 // local function declarations
 static void handlerCtrlC(int sig);
 
 // public methods //////////////////////////////////////////////////////////////
-Interpreter::Interpreter() : m_hadError(false), m_hadRuntimeError(false) {}
+Interpreter::Interpreter() : m_hadError(false), m_hadRuntimeError(false) {
+  std::signal(SIGINT, handlerCtrlC); // install handler
+}
 
 /// @brief Start the inteprter REPL loop.
 void Interpreter::run() {
-  std::signal(SIGINT, handlerCtrlC); // install handler
-
   std::string line;
   while (true) {
     printf("> ");
@@ -23,7 +26,7 @@ void Interpreter::run() {
     std::getline(std::cin, line);
     if (std::cin.eof())
       break;
-    // evaluate(line);
+    auto result = evaluate(line);
 
     // reset error in interactive loop
     if (m_hadError)
@@ -33,12 +36,23 @@ void Interpreter::run() {
   }
 }
 
+/// @brief Evaluate a given string.
+Object Interpreter::evaluate(const std::string &source) {
+  Scanner scanner(*this, source);
+  auto tokens = scanner.scanTokens();
+
+  Parser parser(*this, tokens);
+  auto exprs = parser.parse();
+
+  return false;
+}
+
 /// @brief Indicate a parsing-time error to the inteprter.
 ///
 /// @param[in] message The error message.
 void Interpreter::error(const std::string &message) {
-  (void)message;
-  return;
+  std::cout << message << std::endl;
+  m_hadError = true;
 }
 
 // private methods /////////////////////////////////////////////////////////////
