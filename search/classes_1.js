@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['interpreter_0',['Interpreter',['../classtpcpp_1_1Interpreter.html',1,'tpcpp']]]
+  ['binary_0',['Binary',['../structtpcpp_1_1Binary.html',1,'tpcpp']]],
+  ['box_1',['Box',['../classtpcpp_1_1Box.html',1,'tpcpp']]]
 ];

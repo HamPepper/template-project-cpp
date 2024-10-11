@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['opcollector_0',['OpCollector',['../structtpcpp_1_1OpCollector.html',1,'tpcpp']]]
+  ['call_0',['Call',['../structtpcpp_1_1Call.html',1,'tpcpp']]],
+  ['callable_1',['Callable',['../structtpcpp_1_1Callable.html',1,'tpcpp']]]
 ];

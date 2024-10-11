@@ -32,6 +32,7 @@ var NAVTREE =
         [ "配置 NeoVim", "md_doc_2debug.html#autotoc_md5", null ]
       ] ]
     ] ],
+    [ "Concepts", "concepts.html", "concepts" ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -49,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Exceptions_8hpp_source.html"
+"Box_8hpp_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

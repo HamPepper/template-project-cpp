@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['run_0',['run',['../classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973',1,'tpcpp::Interpreter']]],
-  ['runtimeerror_1',['RuntimeError',['../structtpcpp_1_1RuntimeError.html',1,'tpcpp']]]
+  ['opcollector_0',['OpCollector',['../structtpcpp_1_1OpCollector.html',1,'tpcpp']]],
+  ['operator_2a_1',['operator*',['../classtpcpp_1_1Box.html#a71a6dc06458f18a0174360b264e55bf9',1,'tpcpp::Box']]]
 ];

@@ -1,9 +1,10 @@
 var indexSectionsWithContent =
 {
-  0: "aceginoprst允到目调配",
-  1: "ciorst",
-  2: "ers",
-  3: "cpt调"
+  0: "abcegilnoprstuv允到目调配",
+  1: "abcgiloprstuv",
+  2: "beoprs",
+  3: "cpt调",
+  4: "t"
 };
 
 var indexSectionNames =
@@ -11,7 +12,8 @@ var indexSectionNames =
   0: "all",
   1: "classes",
   2: "functions",
-  3: "pages"
+  3: "pages",
+  4: "concepts"
 };
 
 var indexSectionLabels =
@@ -19,6 +21,7 @@ var indexSectionLabels =
   0: "All",
   1: "Classes",
   2: "Functions",
-  3: "Pages"
+  3: "Pages",
+  4: "Concepts"
 };
 

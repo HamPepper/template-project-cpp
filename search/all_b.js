@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['允许_20gdb_20attach_20到任意进程_0',['允许 GDB attach 到任意进程',['../md_doc_2debug.html#autotoc_md4',1,'']]]
+  ['scanner_0',['Scanner',['../classtpcpp_1_1Scanner.html',1,'tpcpp']]],
+  ['scantokens_1',['scanTokens',['../classtpcpp_1_1Scanner.html#afa0e728b32c9ab92e52077616c1ae495',1,'tpcpp::Scanner']]]
 ];
