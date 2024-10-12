@@ -1,3 +1,4 @@
+#include <cassert>
 #include <format>
 #include <unordered_map>
 
@@ -25,6 +26,7 @@ ListOfExprs Parser::parse() {
     }
   }
 
+  assert(expressions.size() <= 1);
   return expressions;
 }
 
@@ -91,8 +93,8 @@ Expr Parser::equality() {
       auto binary = std::get<Box<Binary>>(expr);
       if (binary->op.type == TokenType::BANG_EQUAL ||
           binary->op.type == TokenType::EQUAL_EQUAL) {
-        error(op, std::format("Chained equality of the form 'a %s b %s c' is "
-                              "illegal. Use 'a %s b and b %s c' instead.",
+        error(op, std::format("Chained equality of the form 'a {} b {} c' is "
+                              "illegal. Use 'a {} b & b {} c' instead.",
                               binary->op.lexeme, op.lexeme, binary->op.lexeme,
                               op.lexeme));
       }
@@ -118,8 +120,8 @@ Expr Parser::comparison() {
           binary->op.type == TokenType::GREATER_EQUAL ||
           binary->op.type == TokenType::LESS ||
           binary->op.type == TokenType::LESS_EQUAL) {
-        error(op, std::format("Chained comparison of the form 'a %s b %s c' is "
-                              "illegal. Use 'a %s b and b %s c' instead.",
+        error(op, std::format("Chained comparison of the form 'a {} b {} c' is "
+                              "illegal. Use 'a {} b & b {} c' instead.",
                               binary->op.lexeme, op.lexeme, binary->op.lexeme,
                               op.lexeme));
       }
