@@ -2,6 +2,7 @@
 
 #include <memory>
 #include <string>
+#include <type_traits>
 #include <variant>
 #include <vector>
 
@@ -39,10 +40,15 @@ using ListOfObjects = std::vector<Object>;
 /// @warning
 /// This is a pure virtual class.
 struct Callable {
-  ~Callable() = default;
+  virtual ~Callable() = default;
 
+  /// @brief Call the function with the given arguments.
   virtual Object call(const ListOfObjects &arguments) = 0;
+
+  /// @brief Return a description of the function in `std::string`.
   virtual const std::string toString() const = 0;
+
+  /// @brief Return the arity of the function.
   virtual size_t arity() const = 0;
 };
 
@@ -56,8 +62,26 @@ bool toBool(const Object &obj);
 long toLong(const Object &obj);
 double toDouble(const Object &obj);
 CallablePtr toCallable(const Object &obj);
-
 std::string toString(const Object &obj);
+
+// type conversion with type a template parameter
+template <typename T>
+concept ObjectToType =
+    std::same_as<T, bool> || std::same_as<T, long> || std::same_as<T, double> ||
+    std::same_as<T, CallablePtr> || std::same_as<T, std::string>;
+
+template <ObjectToType T> constexpr auto toType(Object &obj) {
+  if constexpr (std::same_as<T, bool>)
+    return toBool(obj);
+  else if constexpr (std::same_as<T, long>)
+    return toLong(obj);
+  else if constexpr (std::same_as<T, double>)
+    return toDouble(obj);
+  else if constexpr (std::same_as<T, CallablePtr>)
+    return toCallable(obj);
+  else
+    return toString(obj);
+}
 
 // Object: operators ///////////////////////////////////////////////////////////
 
