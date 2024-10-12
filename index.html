@@ -107,11 +107,52 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 <li>✅ 配置 Github Actions 自动化构建项目并生成文档</li>
 <li>❌ 自动配置开发环境<ul>
 <li>✅ 在 Linux/macOS 下使用 <code>nix</code> 安装依赖</li>
-<li>❌ 在 Windows 下使用 PowerShell 脚本安装依赖 </li>
+<li>❌ 在 Windows 下使用 PowerShell 脚本安装依赖</li>
 </ul>
 </li>
 </ul>
-</div></div><!-- PageDoc -->
+<h1><a class="anchor" id="autotoc_md2"></a>
+使用方法</h1>
+<h2><a class="anchor" id="autotoc_md3"></a>
+克隆项目</h2>
+<div class="fragment"><div class="line">git clone https://github.com/HamPepper/template-project-cpp.git</div>
+<div class="line">cd template-project-cpp</div>
+<div class="line">git submodule update --init --recursive  # 初始化子模块</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+安装依赖</h2>
+<h3><a class="anchor" id="autotoc_md5"></a>
+Windows</h3>
+<div class="fragment"><div class="line"> `</div>
+<div class="line"># 占位符</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md6"></a>
+Linux/macOS</h3>
+<div class="fragment"><div class="line"># 使用 DeterminateSystems 的 Nix 安装器。该安装器自带 flake 支持</div>
+<div class="line">curl --proto &#39;=https&#39; --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install</div>
+<div class="line"> </div>
+<div class="line"># 打开工程根目录</div>
+<div class="line">nix develop</div>
+<div class="line"> </div>
+<div class="line"># 后续流程要在 nix develop 后的 shell 中执行</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+构建项目</h2>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Windows</h3>
+<div class="fragment"><div class="line">cmake --preset msvc</div>
+<div class="line">cmake --build --preset debug</div>
+<div class="line">cmake --build --preset release</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
+Linux/macOS</h3>
+<div class="fragment"><div class="line">cmake --preset debug &amp;&amp; cmake --build build/Debug</div>
+<div class="line">cmake --preset release &amp;&amp; cmake --build build/Release</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+运行测试</h2>
+<h3><a class="anchor" id="autotoc_md11"></a>
+Windows</h3>
+<div class="fragment"><div class="line">ctest --test-dir build -C Debug --output-on-failure</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
+Linux/macOS</h3>
+<div class="fragment"><div class="line">ctest --test-dir build/Debug --output-on-failure</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"/>
 </div><!-- contents -->
 </div><!-- doc-content -->

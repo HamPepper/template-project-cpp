@@ -97,16 +97,16 @@ $(function(){initNavTree('md_doc_2debug.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md3">NixOS + NeoVim + GDB</a><ul><li class="level2"><a href="#autotoc_md4">允许 GDB attach 到任意进程</a></li>
-<li class="level2"><a href="#autotoc_md5">配置 NeoVim</a></li>
+<ul><li class="level1"><a href="#autotoc_md14">NixOS + NeoVim + GDB</a><ul><li class="level2"><a href="#autotoc_md15">允许 GDB attach 到任意进程</a></li>
+<li class="level2"><a href="#autotoc_md16">配置 NeoVim</a></li>
 </ul>
 </li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="autotoc_md2"></a></p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md13"></a></p>
+<h1><a class="anchor" id="autotoc_md14"></a>
 NixOS + NeoVim + GDB</h1>
-<h2><a class="anchor" id="autotoc_md4"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 允许 GDB attach 到任意进程</h2>
 <p>较新版本的 Linux 内核默认 <b>禁止</b> 一个进程 <b>读取/修改</b> 另一个进程的内存， 除非后者是前者的子进程。 因此，GDB 无法 attach 到一个正在运行的进程。</p>
 <p>通过如下修改可移除这一限制：</p>
@@ -114,7 +114,7 @@ NixOS + NeoVim + GDB</h1>
 <div class="line"># or</div>
 <div class="line">sudo sysctl kernel.yama.ptrace_scope=0</div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd>在 NixOS 中，将 <code>boot.kernel.sysctl."kernel.yama.ptrace_scope" = 0</code> 选项添加至 NixOS 主机配置即可。</dd></dl>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 配置 NeoVim</h2>
 <ol type="1">
 <li>安装 <a href="https://github.com/mfussenegger/nvim-dap"><code>nvim-dap</code></a></li>

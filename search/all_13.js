@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['调试（debug）配置与技巧_0',['调试（Debug）配置与技巧',['../md_doc_2debug.html',1,'']]]
+  ['允许_20gdb_20attach_20到任意进程_0',['允许 GDB attach 到任意进程',['../md_doc_2debug.html#autotoc_md15',1,'']]]
 ];

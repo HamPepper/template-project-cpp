@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['parse_0',['parse',['../classtpcpp_1_1Parser.html#a2923635437cd22b12ef8a80a0317da95',1,'tpcpp::Parser']]],
-  ['parseexception_1',['ParseException',['../classtpcpp_1_1Parser_1_1ParseException.html',1,'tpcpp::Parser']]],
-  ['parser_2',['Parser',['../classtpcpp_1_1Parser.html',1,'tpcpp']]],
-  ['primary_3',['primary',['../classtpcpp_1_1Parser.html#afc760e93b6186a044a4582f538e161a1',1,'tpcpp::Parser']]],
-  ['print_4',['print',['../structtpcpp_1_1PrinterExpr.html#a713e84bcc8586612939cea3508f0ce98',1,'tpcpp::PrinterExpr']]],
-  ['printerexpr_5',['PrinterExpr',['../structtpcpp_1_1PrinterExpr.html',1,'tpcpp']]],
-  ['project_20cpp_6',['template-project-cpp',['../index.html',1,'']]]
+  ['object_0',['Object',['../namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796',1,'tpcpp']]],
+  ['opcollector_1',['OpCollector',['../structtpcpp_1_1OpCollector.html',1,'tpcpp']]],
+  ['operator_28_29_2',['operator()',['../structtpcpp_1_1EvaluatorExpr.html#a3e60f027e05e06cc6cac11a553bc1069',1,'tpcpp::EvaluatorExpr::operator()()'],['../structtpcpp_1_1PrinterExpr.html#a7e0786e0b9019fc3fdf65a7e3969d14c',1,'tpcpp::PrinterExpr::operator()()']]],
+  ['operator_2a_3',['operator*',['../classtpcpp_1_1Box.html#a71a6dc06458f18a0174360b264e55bf9',1,'tpcpp::Box']]]
 ];
