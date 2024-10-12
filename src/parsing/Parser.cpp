@@ -26,7 +26,6 @@ ListOfExprs Parser::parse() {
     }
   }
 
-  assert(expressions.size() <= 1);
   return expressions;
 }
 
@@ -220,12 +219,10 @@ Expr Parser::finishCall(const Expr &callee) {
 /// ```
 Expr Parser::primary() {
   // boring keywords
-  if (match(TokenType::FALSE)) {
+  if (match(TokenType::FALSE))
     return Literal{false};
-  }
-  if (match(TokenType::TRUE)) {
+  if (match(TokenType::TRUE))
     return Literal{true};
-  }
 
   // actual literal types
   if (match(TokenType::INTEGER, TokenType::FLOAT))

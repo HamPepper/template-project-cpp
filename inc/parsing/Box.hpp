@@ -4,7 +4,7 @@
 
 namespace tpcpp {
 
-/// @brief Boxing for all Expr classes.
+/// @brief Boxing for all `tpcpp::Expr` classes.
 ///
 /// The Box class provides a value-like semantics.
 ///

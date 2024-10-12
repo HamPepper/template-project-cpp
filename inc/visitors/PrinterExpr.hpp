@@ -6,7 +6,7 @@
 
 namespace tpcpp {
 
-/// @brief Print each tpcpp::Expr as a string.
+/// @brief Print each `tpcpp::Expr` as a string.
 struct PrinterExpr {
   std::string operator()(Expr expr);
   void print(Expr expr);

@@ -1,6 +1,7 @@
 #include "Interpreter.hpp"
 
 #include <csignal>
+#include <format>
 #include <iostream>
 
 #include "parsing/Parser.hpp"
@@ -10,6 +11,7 @@
 #ifdef DEBUG_PARSER
 #include "visitors/PrinterExpr.hpp"
 #endif
+#include "visitors/EvaluatorExpr.hpp"
 
 namespace tpcpp {
 
@@ -21,17 +23,18 @@ Interpreter::Interpreter() : m_hadError(false), m_hadRuntimeError(false) {
   std::signal(SIGINT, handlerCtrlC); // install handler
 }
 
-/// @brief Start the inteprter REPL loop.
+/// @brief Start the interpreter REPL loop.
 void Interpreter::run() {
   std::string line;
   while (true) {
-    printf("> ");
+    std::cout << "> ";
     line.clear();
 
     std::getline(std::cin, line);
     if (std::cin.eof())
       break;
     auto result = evaluate(line);
+    std::cout << toString(result) << std::endl;
 
     // reset error in interactive loop
     if (m_hadError)
@@ -59,7 +62,16 @@ Object Interpreter::evaluate(const std::string &source) {
     printer.print(e);
 #endif
 
-  return false;
+  Object result{};
+  EvaluatorExpr evaluator{*this};
+  try {
+    for (const auto &e : exprs)
+      result = evaluator(e);
+  } catch (const RuntimeError &e) {
+    runtimeError(e);
+  }
+
+  return result;
 }
 
 /// @brief Indicate a parsing-time error to the inteprter.
@@ -68,6 +80,33 @@ Object Interpreter::evaluate(const std::string &source) {
 void Interpreter::error(const std::string &message) {
   std::cout << message << std::endl;
   m_hadError = true;
+}
+
+/// @brief Indicate a run-time error to the inteprter.
+///
+/// @param[in] error A `tpcpp::RuntimeError` instance.
+void Interpreter::runtimeError(const RuntimeError &error) {
+  std::cout << error.message << std::endl;
+  m_hadRuntimeError = true;
+}
+
+/// @brief Set a global variable.
+///
+/// @param[in] name The name of the variable.
+/// @param[in] value The value of the variable.
+void Interpreter::setVariable(const std::string &name, const Object &value) {
+  m_globals[name] = value;
+}
+
+/// @brief Get a global variable.
+///
+/// @param[in] name The name of the variable.
+/// @return The value of the variable.
+Object Interpreter::getVariable(const std::string &name) {
+  auto it = m_globals.find(name);
+  if (it == m_globals.end())
+    throw RuntimeError(std::format("Undefined variable '{}'", name));
+  return it->second;
 }
 
 // private methods /////////////////////////////////////////////////////////////

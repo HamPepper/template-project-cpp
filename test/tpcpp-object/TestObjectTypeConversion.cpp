@@ -25,6 +25,11 @@ void testFromBoolToString() {
   assert(toString(o) == "true");
 }
 
+void testFromLongToString() {
+  Object o = 42;
+  assert(toString(o) == "42");
+}
+
 void testFromCallableToString() {
   Object c = CallablePtr{new MockUpCallable{}};
   assert(toString(c) == "this is a mockup callable");
@@ -37,6 +42,7 @@ int main() {
   tpcpp::testFromDoubleToLong();
   tpcpp::testFromBoolToDouble();
   tpcpp::testFromBoolToString();
+  tpcpp::testFromLongToString();
   tpcpp::testFromCallableToString();
 
   return 0;

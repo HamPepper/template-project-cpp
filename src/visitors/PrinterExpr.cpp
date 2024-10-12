@@ -7,10 +7,10 @@
 
 namespace tpcpp {
 
-/// @brief Convert a tpcpp::Expr to a string.
+/// @brief Convert a `tpcpp::Expr` to a string.
 ///
-/// @param[in] expr The tpcpp::Expr to convert.
-/// @return The string representation of the Expr.
+/// @param[in] expr The `tpcpp::Expr` to convert.
+/// @return The string representation of the `tpcpp::Expr`.
 std::string PrinterExpr::operator()(Expr expr) {
   auto hdlAssign = [this](Box<Assign> e) -> std::string {
     return std::format("(assign {} {})", e->name.lexeme, operator()(e->value));
@@ -49,9 +49,9 @@ std::string PrinterExpr::operator()(Expr expr) {
                     expr);
 }
 
-/// @brief Print a tpcpp::Expr to stdout.
+/// @brief Print a `tpcpp::Expr` to stdout.
 ///
-/// @param[in] expr The tpcpp::Expr to print.
+/// @param[in] expr The `tpcpp::Expr` to print.
 void PrinterExpr::print(Expr expr) {
   auto str = operator()(expr);
   std::cout << str << std::endl;
