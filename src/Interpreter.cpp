@@ -6,7 +6,7 @@
 #include "parsing/Parser.hpp"
 #include "parsing/Scanner.hpp"
 
-#define DEBUG_PARSER
+// #define DEBUG_PARSER
 #ifdef DEBUG_PARSER
 #include "visitors/PrinterExpr.hpp"
 #endif

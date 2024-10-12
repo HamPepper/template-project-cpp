@@ -21,6 +21,8 @@ struct Logical;
 struct Unary;
 struct Variable;
 
+/// @typedef tpcpp::Expr
+/// @brief A variant type that can hold any of the expression types
 using Expr = std::variant<
   Box<Assign>,
   Box<Binary>,

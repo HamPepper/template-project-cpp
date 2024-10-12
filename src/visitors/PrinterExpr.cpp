@@ -7,9 +7,9 @@
 
 namespace tpcpp {
 
-/// @brief Convert an Expr to a string.
+/// @brief Convert a tpcpp::Expr to a string.
 ///
-/// @param[in] expr The Expr to convert.
+/// @param[in] expr The tpcpp::Expr to convert.
 /// @return The string representation of the Expr.
 std::string PrinterExpr::operator()(Expr expr) {
   auto hdlAssign = [this](Box<Assign> e) -> std::string {
@@ -49,9 +49,9 @@ std::string PrinterExpr::operator()(Expr expr) {
                     expr);
 }
 
-/// @brief Print an Expr to stdout.
+/// @brief Print a tpcpp::Expr to stdout.
 ///
-/// @param[in] expr The Expr to print.
+/// @param[in] expr The tpcpp::Expr to print.
 void PrinterExpr::print(Expr expr) {
   auto str = operator()(expr);
   std::cout << str << std::endl;
