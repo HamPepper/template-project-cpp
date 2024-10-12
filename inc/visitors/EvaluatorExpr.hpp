@@ -14,7 +14,7 @@ struct EvaluatorExpr {
 
   Object operator()(Box<Assign> expr);
   Object operator()(Box<Binary> expr);
-  // Object operator()(Box<Call> expr);
+  Object operator()(Box<Call> expr);
   Object operator()(Box<Grouping> expr);
   Object operator()(Box<Literal> expr);
   Object operator()(Box<Logical> expr);

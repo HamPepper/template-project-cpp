@@ -1,8 +1,12 @@
 #include "Interpreter.hpp"
 
+#include <cmath>
 #include <csignal>
 #include <format>
+#include <functional>
 #include <iostream>
+
+#include "Function.hpp"
 
 #include "parsing/Parser.hpp"
 #include "parsing/Scanner.hpp"
@@ -21,6 +25,7 @@ static void handlerCtrlC(int sig);
 // public methods //////////////////////////////////////////////////////////////
 Interpreter::Interpreter() : m_hadError(false), m_hadRuntimeError(false) {
   std::signal(SIGINT, handlerCtrlC); // install handler
+  registerFunctions();
 }
 
 /// @brief Start the interpreter REPL loop.
@@ -110,9 +115,36 @@ Object Interpreter::getVariable(const std::string &name) {
 }
 
 // private methods /////////////////////////////////////////////////////////////
+
+/// @brief Register native functions to the tpcpp interpreter.
+///
+/// @remark
+/// Currently the following functions are provided
+/// - `sin`
+/// - `cos`
+/// - `abs`
+/// - `max`
+/// - `min`
 void Interpreter::registerFunctions() {
-  // register native functions
-  return;
+  auto reg = [&](const CallablePtr &ptr) { m_globals[ptr->name()] = ptr; };
+
+  // clang-format off
+  reg(CallablePtr{new Function{"sin",
+      std::function<double(double)>{[](double x) { return std::sin(x); }}}});
+  reg(CallablePtr{new Function{"cos",
+      std::function<double(double)>{[](double x) { return std::cos(x); }}}});
+  reg(CallablePtr{new Function{"abs",
+      std::function<double(double)>{[](double x) { return std::abs(x); }}}});
+
+  reg(CallablePtr{new Function{"max",
+      std::function<double(double, double)>{
+          [](double x, double y) -> double {return std::max(x, y); }
+      }}});
+  reg(CallablePtr{new Function{"min",
+      std::function<double(double, double)>{
+          [](double x, double y) -> double {return std::min(x, y); }
+      }}});
+  // clang-format on
 }
 
 // static helpers //////////////////////////////////////////////////////////////

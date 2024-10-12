@@ -76,6 +76,20 @@ Object EvaluatorExpr::operator()(Box<Binary> expr) {
   }
 }
 
+Object EvaluatorExpr::operator()(Box<Call> expr) {
+  auto callee = toCallable((*this)(expr->callee));
+
+  std::vector<Object> arguments{};
+  for (auto &&arg : expr->arguments)
+    arguments.push_back((*this)(arg));
+
+  if (arguments.size() != callee->arity())
+    throw RuntimeError{std::format("Expected {} arguments but got {}.",
+                                   callee->arity(), arguments.size())};
+
+  return callee->call(arguments);
+}
+
 Object EvaluatorExpr::operator()(Box<Grouping> expr) {
   return (*this)(expr->expression);
 }

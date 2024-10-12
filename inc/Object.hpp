@@ -45,6 +45,9 @@ struct Callable {
   /// @brief Call the function with the given arguments.
   virtual Object call(const ListOfObjects &arguments) = 0;
 
+  /// @brief Return the name the function in `std::string`.
+  virtual const std::string name() const = 0;
+
   /// @brief Return a description of the function in `std::string`.
   virtual const std::string toString() const = 0;
 

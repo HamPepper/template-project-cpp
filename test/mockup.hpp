@@ -4,6 +4,7 @@ namespace tpcpp {
 
 struct MockUpCallable : public Callable {
   Object call(const ListOfObjects &) { return true; };
+  const std::string name() const { return "MockUpCallable"; };
   const std::string toString() const { return "this is a mockup callable"; };
   size_t arity() const { return 0; };
 };
