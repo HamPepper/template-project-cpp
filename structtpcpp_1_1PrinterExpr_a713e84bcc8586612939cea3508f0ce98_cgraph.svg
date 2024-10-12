@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Print an Expr to stdout.">
+<g id="a_Node000001"><a xlink:title="Print a tpcpp::Expr to stdout.">
 <polygon fill="#999999" stroke="#666666" points="103,-33.5 0,-33.5 0,0 103,0 103,-33.5"/>
 <text text-anchor="start" x="8" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">tpcpp::PrinterExpr</text>
 <text text-anchor="middle" x="51.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">::print</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structtpcpp_1_1PrinterExpr.html#a7e0786e0b9019fc3fdf65a7e3969d14c" target="_top" xlink:title="Convert an Expr to a string.">
+<g id="a_Node000002"><a xlink:href="structtpcpp_1_1PrinterExpr.html#a7e0786e0b9019fc3fdf65a7e3969d14c" target="_top" xlink:title="Convert a tpcpp::Expr to a string.">
 <polygon fill="white" stroke="#666666" points="242,-33.5 139,-33.5 139,0 242,0 242,-33.5"/>
 <text text-anchor="start" x="147" y="-20" font-family="Helvetica,sans-Serif" font-size="10.00">tpcpp::PrinterExpr</text>
 <text text-anchor="middle" x="190.5" y="-7.25" font-family="Helvetica,sans-Serif" font-size="10.00">::operator()</text>

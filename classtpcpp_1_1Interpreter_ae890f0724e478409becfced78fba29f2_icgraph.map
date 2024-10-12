@@ -1,5 +1,5 @@
 <map id="tpcpp::Interpreter::evaluate" name="tpcpp::Interpreter::evaluate">
 <area shape="rect" id="Node000001" title="Evaluate a given string." alt="" coords="217,5,351,50"/>
-<area shape="rect" id="Node000002" href="$classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973" title="Start the inteprter REPL loop." alt="" coords="5,14,169,42"/>
+<area shape="rect" id="Node000002" href="$classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973" title="Start the interpreter REPL loop." alt="" coords="5,14,169,42"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,30,169,30,169,25,201,25"/>
 </map>

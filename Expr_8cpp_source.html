@@ -108,20 +108,21 @@ $(function(){initNavTree('Expr_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacetpcpp.html">tpcpp</a> {</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// predicates //////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">bool</span> isExprBinary(<span class="keyword">const</span> Expr &amp;expr) {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">bool</span> isExprBinary(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;expr) {</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>  <span class="keyword">auto</span> hdlBinary = [](Box&lt;Binary&gt;) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">auto</span> hdlGen = [](<span class="keyword">auto</span>) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">false</span>; };</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keywordflow">return</span> std::visit(OpCollector{hdlBinary, hdlGen}, expr);</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>}</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">bool</span> isExprVariable(<span class="keyword">const</span> Expr &amp;expr) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">bool</span> isExprVariable(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;expr) {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>  <span class="keyword">auto</span> hdlVariable = [](Box&lt;Variable&gt;) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">true</span>; };</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">auto</span> hdlGen = [](<span class="keyword">auto</span>) -&gt; <span class="keywordtype">bool</span> { <span class="keywordflow">return</span> <span class="keyword">false</span>; };</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keywordflow">return</span> std::visit(OpCollector{hdlVariable, hdlGen}, expr);</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>} <span class="comment">// namespace tpcpp</span></div>
-<div class="ttc" id="anamespacetpcpp_html"><div class="ttname"><a href="namespacetpcpp.html">tpcpp</a></div><div class="ttdoc">All tpcpp classes are placed in this namespace.</div><div class="ttdef"><b>Definition</b> <a href="Interpreter_8cpp_source.html#l00014">Interpreter.cpp:14</a></div></div>
+<div class="ttc" id="anamespacetpcpp_html"><div class="ttname"><a href="namespacetpcpp.html">tpcpp</a></div><div class="ttdoc">All tpcpp classes are placed in this namespace.</div><div class="ttdef"><b>Definition</b> <a href="Interpreter_8cpp_source.html#l00016">Interpreter.cpp:16</a></div></div>
+<div class="ttc" id="anamespacetpcpp_html_ad72b8a105c6868f64db14dc3b6aa7b95"><div class="ttname"><a href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">tpcpp::Expr</a></div><div class="ttdeci">std::variant&lt; Box&lt; Assign &gt;, Box&lt; Binary &gt;, Box&lt; Call &gt;, Box&lt; Grouping &gt;, Box&lt; Literal &gt;, Box&lt; Logical &gt;, Box&lt; Unary &gt;, Box&lt; Variable &gt; &gt; Expr</div><div class="ttdoc">A variant type that can hold any of the expression types.</div><div class="ttdef"><b>Definition</b> <a href="Expr_8hpp_source.html#l00026">Expr.hpp:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

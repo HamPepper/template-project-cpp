@@ -6,6 +6,7 @@ var annotated_dup =
       [ "Box", "classtpcpp_1_1Box.html", "classtpcpp_1_1Box" ],
       [ "Call", "structtpcpp_1_1Call.html", null ],
       [ "Callable", "structtpcpp_1_1Callable.html", null ],
+      [ "EvaluatorExpr", "structtpcpp_1_1EvaluatorExpr.html", "structtpcpp_1_1EvaluatorExpr" ],
       [ "Grouping", "structtpcpp_1_1Grouping.html", null ],
       [ "Interpreter", "classtpcpp_1_1Interpreter.html", "classtpcpp_1_1Interpreter" ],
       [ "Literal", "structtpcpp_1_1Literal.html", null ],

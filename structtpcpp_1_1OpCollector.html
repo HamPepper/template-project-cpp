@@ -100,7 +100,7 @@ $(function(){initNavTree('structtpcpp_1_1OpCollector.html',''); initResizable();
 <p>Helper class to collect call operators from all lambdas.  
  <a href="#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="helpers_8hpp_source.html">helpers.hpp</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="helpers_8hpp_source.html">visitors/helpers.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for tpcpp::OpCollector&lt; Ts &gt;:</div>
 <div class="dyncontent">
@@ -119,7 +119,7 @@ struct tpcpp::OpCollector&lt; Ts &gt;</div><p>Helper class to collect call opera
 <div class="line"><span class="keyword">auto</span> <a class="code hl_class" href="classtpcpp_1_1Box.html">v2</a> = [](<a class="code hl_class" href="classtpcpp_1_1Box.html">double</a>) -&gt; <span class="keywordtype">int</span> { <span class="keywordflow">return</span> 1; };</div>
 <div class="line"> </div>
 <div class="line">std::visit(OpCollector{v1, v2}, variant);</div>
-<div class="ttc" id="aclasstpcpp_1_1Box_html"><div class="ttname"><a href="classtpcpp_1_1Box.html">tpcpp::Box</a></div><div class="ttdoc">Boxing for all Expr classes.</div><div class="ttdef"><b>Definition</b> <a href="Box_8hpp_source.html#l00013">Box.hpp:13</a></div></div>
+<div class="ttc" id="aclasstpcpp_1_1Box_html"><div class="ttname"><a href="classtpcpp_1_1Box.html">tpcpp::Box</a></div><div class="ttdoc">Boxing for all tpcpp::Expr classes.</div><div class="ttdef"><b>Definition</b> <a href="Box_8hpp_source.html#l00013">Box.hpp:13</a></div></div>
 </div><!-- fragment --><dl class="section note"><dt>Note</dt><dd><code><a class="el" href="structtpcpp_1_1OpCollector.html" title="Helper class to collect call operators from all lambdas.">OpCollector</a></code> also works with n-ary operators. For example: <div class="fragment"><div class="line"><span class="keyword">auto</span> <a class="code hl_class" href="classtpcpp_1_1Box.html">v</a> = [](<a class="code hl_class" href="classtpcpp_1_1Box.html">bool</a>, <a class="code hl_class" href="classtpcpp_1_1Box.html">double</a>) -&gt; <span class="keywordtype">int</span> { <span class="keywordflow">return</span> 1; };</div>
 <div class="line">std::visit(<a class="code hl_struct" href="structtpcpp_1_1OpCollector.html">OpCollector</a>{<a class="code hl_class" href="classtpcpp_1_1Box.html">v</a>}, variant);</div>
 <div class="ttc" id="astructtpcpp_1_1OpCollector_html"><div class="ttname"><a href="structtpcpp_1_1OpCollector.html">tpcpp::OpCollector</a></div><div class="ttdoc">Helper class to collect call operators from all lambdas.</div><div class="ttdef"><b>Definition</b> <a href="helpers_8hpp_source.html#l00020">helpers.hpp:20</a></div></div>

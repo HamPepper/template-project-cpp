@@ -5,6 +5,7 @@ var namespacetpcpp =
     [ "Box", "classtpcpp_1_1Box.html", "classtpcpp_1_1Box" ],
     [ "Call", "structtpcpp_1_1Call.html", null ],
     [ "Callable", "structtpcpp_1_1Callable.html", null ],
+    [ "EvaluatorExpr", "structtpcpp_1_1EvaluatorExpr.html", "structtpcpp_1_1EvaluatorExpr" ],
     [ "Grouping", "structtpcpp_1_1Grouping.html", null ],
     [ "Interpreter", "classtpcpp_1_1Interpreter.html", "classtpcpp_1_1Interpreter" ],
     [ "Literal", "structtpcpp_1_1Literal.html", null ],
@@ -19,5 +20,6 @@ var namespacetpcpp =
     [ "Variable", "structtpcpp_1_1Variable.html", null ],
     [ "IsTokenType", "concepttpcpp_1_1IsTokenType.html", null ],
     [ "CallablePtr", "namespacetpcpp.html#ad00d84db4919ee2323c3076504977c41", null ],
+    [ "Expr", "namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95", null ],
     [ "Object", "namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796", null ]
 ];

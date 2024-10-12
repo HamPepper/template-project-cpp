@@ -124,121 +124,123 @@ $(function(){initNavTree('Expr_8hpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">struct </span>Unary;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">struct </span>Variable;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">using </span>Expr = std::variant&lt;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  Box&lt;Assign&gt;,</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  Box&lt;Binary&gt;,</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  Box&lt;Call&gt;,</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  Box&lt;Grouping&gt;,</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Box&lt;Literal&gt;,</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  Box&lt;Logical&gt;,</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  Box&lt;Unary&gt;,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  Box&lt;Variable&gt;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>&gt;;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">using </span>ListOfExprs = std::vector&lt;Expr&gt;;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">   26</a></span><span class="keyword">using </span><a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> = std::variant&lt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Assign&gt;</a>,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Binary&gt;</a>,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Call&gt;</a>,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Grouping&gt;</a>,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Literal&gt;</a>,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Logical&gt;</a>,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Unary&gt;</a>,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_class" href="classtpcpp_1_1Box.html">Box&lt;Variable&gt;</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>&gt;;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// clang-format on</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// predicates //////////////////////////////////////////////////////////////////</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keywordtype">bool</span> isExprBinary(<span class="keyword">const</span> Expr &amp;expr);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keywordtype">bool</span> isExprVariable(<span class="keyword">const</span> Expr &amp;expr);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// Expr structs ////////////////////////////////////////////////////////////////</span></div>
-<div class="foldopen" id="foldopen00043" data-start="{" data-end="};">
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Assign.html">   43</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Assign.html">Assign</a> {</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <a class="code hl_struct" href="structtpcpp_1_1Assign.html">Assign</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;name, <span class="keyword">const</span> Expr &amp;value) : name(name), value(value) {};</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> name;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  Expr value;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">using </span>ListOfExprs = std::vector&lt;Expr&gt;;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// predicates //////////////////////////////////////////////////////////////////</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keywordtype">bool</span> isExprBinary(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;expr);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keywordtype">bool</span> isExprVariable(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;expr);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// Expr structs ////////////////////////////////////////////////////////////////</span></div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="};">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Assign.html">   45</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Assign.html">Assign</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <a class="code hl_struct" href="structtpcpp_1_1Assign.html">Assign</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;name, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;value) : name(name), value(value) {};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> name;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> value;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="foldopen" id="foldopen00050" data-start="{" data-end="};">
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Binary.html">   50</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a> {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> Expr &amp;left, <span class="keyword">const</span> Expr &amp;right)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      : op(op), left(left), right(right) {};</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// allow infix notation for binary operators</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a>(<span class="keyword">const</span> Expr &amp;left, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> Expr &amp;right)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      : <a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a>(op, left, right) {};</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> op;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  Expr left;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  Expr right;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Binary.html">   52</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a> {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;left, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;right)</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      : op(op), left(left), right(right) {};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">// allow infix notation for binary operators</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;left, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;right)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      : <a class="code hl_struct" href="structtpcpp_1_1Binary.html">Binary</a>(op, left, right) {};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> op;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> left;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> right;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="foldopen" id="foldopen00062" data-start="{" data-end="};">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Call.html">   62</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Call.html">Call</a> {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <a class="code hl_struct" href="structtpcpp_1_1Call.html">Call</a>(<span class="keyword">const</span> Expr &amp;callee, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;paren, <span class="keyword">const</span> ListOfExprs &amp;arguments)</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      : callee(callee), paren(paren), arguments(arguments) {};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  Expr callee;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> paren;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  ListOfExprs arguments;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="};">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Call.html">   64</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Call.html">Call</a> {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <a class="code hl_struct" href="structtpcpp_1_1Call.html">Call</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;callee, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;paren, <span class="keyword">const</span> ListOfExprs &amp;arguments)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      : callee(callee), paren(paren), arguments(arguments) {};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> callee;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> paren;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  ListOfExprs arguments;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="};">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Grouping.html">   71</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Grouping.html">Grouping</a> {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <a class="code hl_struct" href="structtpcpp_1_1Grouping.html">Grouping</a>(<span class="keyword">const</span> Expr &amp;expression, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;paren = <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a>{})</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      : expression(expression), paren(paren) {};</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  Expr expression;</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> paren;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="};">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Grouping.html">   73</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Grouping.html">Grouping</a> {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code hl_struct" href="structtpcpp_1_1Grouping.html">Grouping</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;expression, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;paren = <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a>{})</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      : expression(expression), paren(paren) {};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> expression;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> paren;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="foldopen" id="foldopen00079" data-start="{" data-end="};">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Literal.html">   79</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Literal.html">Literal</a> {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <a class="code hl_struct" href="structtpcpp_1_1Literal.html">Literal</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> &amp;value, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;token = <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a>{})</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      : value(value), token(token) {};</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <a class="code hl_typedef" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> value;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> token;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="foldopen" id="foldopen00081" data-start="{" data-end="};">
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Literal.html">   81</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Literal.html">Literal</a> {</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <a class="code hl_struct" href="structtpcpp_1_1Literal.html">Literal</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> &amp;value, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;token = <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a>{})</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      : value(value), token(token) {};</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <a class="code hl_typedef" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> value;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> token;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>};</div>
 </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="foldopen" id="foldopen00087" data-start="{" data-end="};">
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Logical.html">   87</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a> {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> Expr &amp;left, <span class="keyword">const</span> Expr &amp;right)</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      : op(op), left(left), right(right) {};</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a>(<span class="keyword">const</span> Expr &amp;left, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> Expr &amp;right)</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      : <a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a>(op, left, right) {};</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> op;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  Expr left;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  Expr right;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="foldopen" id="foldopen00089" data-start="{" data-end="};">
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Logical.html">   89</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a> {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;left, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;right)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      : op(op), left(left), right(right) {};</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;left, <span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;right)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      : <a class="code hl_struct" href="structtpcpp_1_1Logical.html">Logical</a>(op, left, right) {};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> op;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> left;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> right;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
 </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="foldopen" id="foldopen00098" data-start="{" data-end="};">
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Unary.html">   98</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Unary.html">Unary</a> {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <a class="code hl_struct" href="structtpcpp_1_1Unary.html">Unary</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> Expr &amp;right) : op(op), right(right) {};</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> op;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  Expr right;</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="foldopen" id="foldopen00100" data-start="{" data-end="};">
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Unary.html">  100</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Unary.html">Unary</a> {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <a class="code hl_struct" href="structtpcpp_1_1Unary.html">Unary</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;op, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> &amp;right) : op(op), right(right) {};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> op;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <a class="code hl_typedef" href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">Expr</a> right;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>};</div>
 </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="foldopen" id="foldopen00105" data-start="{" data-end="};">
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Variable.html">  105</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Variable.html">Variable</a> {</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <a class="code hl_struct" href="structtpcpp_1_1Variable.html">Variable</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;name) : name(name) {};</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> name;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="foldopen" id="foldopen00107" data-start="{" data-end="};">
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="structtpcpp_1_1Variable.html">  107</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structtpcpp_1_1Variable.html">Variable</a> {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <a class="code hl_struct" href="structtpcpp_1_1Variable.html">Variable</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> &amp;name) : name(name) {};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <a class="code hl_struct" href="structtpcpp_1_1Token.html">Token</a> name;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
 </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>} <span class="comment">// namespace tpcpp</span></div>
-<div class="ttc" id="anamespacetpcpp_html"><div class="ttname"><a href="namespacetpcpp.html">tpcpp</a></div><div class="ttdoc">All tpcpp classes are placed in this namespace.</div><div class="ttdef"><b>Definition</b> <a href="Interpreter_8cpp_source.html#l00014">Interpreter.cpp:14</a></div></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>} <span class="comment">// namespace tpcpp</span></div>
+<div class="ttc" id="aclasstpcpp_1_1Box_html"><div class="ttname"><a href="classtpcpp_1_1Box.html">tpcpp::Box</a></div><div class="ttdoc">Boxing for all tpcpp::Expr classes.</div><div class="ttdef"><b>Definition</b> <a href="Box_8hpp_source.html#l00013">Box.hpp:13</a></div></div>
+<div class="ttc" id="anamespacetpcpp_html"><div class="ttname"><a href="namespacetpcpp.html">tpcpp</a></div><div class="ttdoc">All tpcpp classes are placed in this namespace.</div><div class="ttdef"><b>Definition</b> <a href="Interpreter_8cpp_source.html#l00016">Interpreter.cpp:16</a></div></div>
 <div class="ttc" id="anamespacetpcpp_html_a3640f25fd962bf93590fa45578a3b796"><div class="ttname"><a href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">tpcpp::Object</a></div><div class="ttdeci">std::variant&lt; bool, long, double, CallablePtr &gt; Object</div><div class="ttdoc">A std::variant type used in expression evaluation.</div><div class="ttdef"><b>Definition</b> <a href="Object_8hpp_source.html#l00031">Object.hpp:31</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Assign_html"><div class="ttname"><a href="structtpcpp_1_1Assign.html">tpcpp::Assign</a></div><div class="ttdef"><b>Definition</b> <a href="#l00043">Expr.hpp:43</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Binary_html"><div class="ttname"><a href="structtpcpp_1_1Binary.html">tpcpp::Binary</a></div><div class="ttdef"><b>Definition</b> <a href="#l00050">Expr.hpp:50</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Call_html"><div class="ttname"><a href="structtpcpp_1_1Call.html">tpcpp::Call</a></div><div class="ttdef"><b>Definition</b> <a href="#l00062">Expr.hpp:62</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Grouping_html"><div class="ttname"><a href="structtpcpp_1_1Grouping.html">tpcpp::Grouping</a></div><div class="ttdef"><b>Definition</b> <a href="#l00071">Expr.hpp:71</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Literal_html"><div class="ttname"><a href="structtpcpp_1_1Literal.html">tpcpp::Literal</a></div><div class="ttdef"><b>Definition</b> <a href="#l00079">Expr.hpp:79</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Logical_html"><div class="ttname"><a href="structtpcpp_1_1Logical.html">tpcpp::Logical</a></div><div class="ttdef"><b>Definition</b> <a href="#l00087">Expr.hpp:87</a></div></div>
+<div class="ttc" id="anamespacetpcpp_html_ad72b8a105c6868f64db14dc3b6aa7b95"><div class="ttname"><a href="namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95">tpcpp::Expr</a></div><div class="ttdeci">std::variant&lt; Box&lt; Assign &gt;, Box&lt; Binary &gt;, Box&lt; Call &gt;, Box&lt; Grouping &gt;, Box&lt; Literal &gt;, Box&lt; Logical &gt;, Box&lt; Unary &gt;, Box&lt; Variable &gt; &gt; Expr</div><div class="ttdoc">A variant type that can hold any of the expression types.</div><div class="ttdef"><b>Definition</b> <a href="#l00026">Expr.hpp:26</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Assign_html"><div class="ttname"><a href="structtpcpp_1_1Assign.html">tpcpp::Assign</a></div><div class="ttdef"><b>Definition</b> <a href="#l00045">Expr.hpp:45</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Binary_html"><div class="ttname"><a href="structtpcpp_1_1Binary.html">tpcpp::Binary</a></div><div class="ttdef"><b>Definition</b> <a href="#l00052">Expr.hpp:52</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Call_html"><div class="ttname"><a href="structtpcpp_1_1Call.html">tpcpp::Call</a></div><div class="ttdef"><b>Definition</b> <a href="#l00064">Expr.hpp:64</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Grouping_html"><div class="ttname"><a href="structtpcpp_1_1Grouping.html">tpcpp::Grouping</a></div><div class="ttdef"><b>Definition</b> <a href="#l00073">Expr.hpp:73</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Literal_html"><div class="ttname"><a href="structtpcpp_1_1Literal.html">tpcpp::Literal</a></div><div class="ttdef"><b>Definition</b> <a href="#l00081">Expr.hpp:81</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Logical_html"><div class="ttname"><a href="structtpcpp_1_1Logical.html">tpcpp::Logical</a></div><div class="ttdef"><b>Definition</b> <a href="#l00089">Expr.hpp:89</a></div></div>
 <div class="ttc" id="astructtpcpp_1_1Token_html"><div class="ttname"><a href="structtpcpp_1_1Token.html">tpcpp::Token</a></div><div class="ttdoc">a single unit of source code, as produced by the Scanner.</div><div class="ttdef"><b>Definition</b> <a href="Token_8hpp_source.html#l00013">Token.hpp:13</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Unary_html"><div class="ttname"><a href="structtpcpp_1_1Unary.html">tpcpp::Unary</a></div><div class="ttdef"><b>Definition</b> <a href="#l00098">Expr.hpp:98</a></div></div>
-<div class="ttc" id="astructtpcpp_1_1Variable_html"><div class="ttname"><a href="structtpcpp_1_1Variable.html">tpcpp::Variable</a></div><div class="ttdef"><b>Definition</b> <a href="#l00105">Expr.hpp:105</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Unary_html"><div class="ttname"><a href="structtpcpp_1_1Unary.html">tpcpp::Unary</a></div><div class="ttdef"><b>Definition</b> <a href="#l00100">Expr.hpp:100</a></div></div>
+<div class="ttc" id="astructtpcpp_1_1Variable_html"><div class="ttname"><a href="structtpcpp_1_1Variable.html">tpcpp::Variable</a></div><div class="ttdef"><b>Definition</b> <a href="#l00107">Expr.hpp:107</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

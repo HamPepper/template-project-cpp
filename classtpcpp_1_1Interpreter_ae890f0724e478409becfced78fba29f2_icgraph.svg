@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973" target="_top" xlink:title="Start the inteprter REPL loop.">
+<g id="a_Node000002"><a xlink:href="classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973" target="_top" xlink:title="Start the interpreter REPL loop.">
 <polygon fill="white" stroke="#666666" points="122.5,-27.12 0,-27.12 0,-6.38 122.5,-6.38 122.5,-27.12"/>
 <text text-anchor="middle" x="61.25" y="-13.62" font-family="Helvetica,sans-Serif" font-size="10.00">tpcpp::Interpreter::run</text>
 </a>

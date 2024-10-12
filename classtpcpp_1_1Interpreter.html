@@ -109,7 +109,7 @@ $(function(){initNavTree('classtpcpp_1_1Interpreter.html',''); initResizable(); 
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7ccf59509a652749a1ecf35d04439973" id="r_a7ccf59509a652749a1ecf35d04439973"><td class="memItemLeft" align="right" valign="top"><a id="a7ccf59509a652749a1ecf35d04439973" name="a7ccf59509a652749a1ecf35d04439973"></a>
 <a class="el" href="classtpcpp_1_1Box.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
-<tr class="memdesc:a7ccf59509a652749a1ecf35d04439973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the inteprter REPL loop. <br /></td></tr>
+<tr class="memdesc:a7ccf59509a652749a1ecf35d04439973"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start the interpreter REPL loop. <br /></td></tr>
 <tr class="separator:a7ccf59509a652749a1ecf35d04439973"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae890f0724e478409becfced78fba29f2" id="r_ae890f0724e478409becfced78fba29f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae890f0724e478409becfced78fba29f2">evaluate</a> (<a class="el" href="classtpcpp_1_1Box.html">const</a> std::string &amp;<a class="el" href="classtpcpp_1_1Box.html">expr</a>)</td></tr>
 <tr class="memdesc:ae890f0724e478409becfced78fba29f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate a given string.  <br /></td></tr>
@@ -117,11 +117,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2276ab36d6189c142082b2ac9696e05a" id="r_a2276ab36d6189c142082b2ac9696e05a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtpcpp_1_1Box.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2276ab36d6189c142082b2ac9696e05a">error</a> (<a class="el" href="classtpcpp_1_1Box.html">const</a> std::string &amp;message)</td></tr>
 <tr class="memdesc:a2276ab36d6189c142082b2ac9696e05a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate a parsing-time error to the inteprter.  <br /></td></tr>
 <tr class="separator:a2276ab36d6189c142082b2ac9696e05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed9dbf0d7fc5d37c7a356fbc2c3f866" id="r_a9ed9dbf0d7fc5d37c7a356fbc2c3f866"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtpcpp_1_1Box.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ed9dbf0d7fc5d37c7a356fbc2c3f866">runtimeError</a> (<a class="el" href="classtpcpp_1_1Box.html">const</a> <a class="el" href="structtpcpp_1_1RuntimeError.html">RuntimeError</a> &amp;<a class="el" href="#a2276ab36d6189c142082b2ac9696e05a">error</a>)</td></tr>
+<tr class="memdesc:a9ed9dbf0d7fc5d37c7a356fbc2c3f866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate a run-time error to the inteprter.  <br /></td></tr>
+<tr class="separator:a9ed9dbf0d7fc5d37c7a356fbc2c3f866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa3dc406cb67e9a380aae51f8b1485f6" id="r_afa3dc406cb67e9a380aae51f8b1485f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtpcpp_1_1Box.html">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afa3dc406cb67e9a380aae51f8b1485f6">setVariable</a> (<a class="el" href="classtpcpp_1_1Box.html">const</a> std::string &amp;name, <a class="el" href="classtpcpp_1_1Box.html">const</a> <a class="el" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> &amp;value)</td></tr>
+<tr class="memdesc:afa3dc406cb67e9a380aae51f8b1485f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a global variable.  <br /></td></tr>
+<tr class="separator:afa3dc406cb67e9a380aae51f8b1485f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a78f42558424098bb6156c9b3d488a" id="r_a73a78f42558424098bb6156c9b3d488a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73a78f42558424098bb6156c9b3d488a">getVariable</a> (<a class="el" href="classtpcpp_1_1Box.html">const</a> std::string &amp;name)</td></tr>
+<tr class="memdesc:a73a78f42558424098bb6156c9b3d488a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a global variable.  <br /></td></tr>
+<tr class="separator:a73a78f42558424098bb6156c9b3d488a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The tpcpp interpreter, which is a simple calculator. </p>
 
-<p class="definition">Definition at line <a class="el" href="Interpreter_8hpp_source.html#l00010">10</a> of file <a class="el" href="Interpreter_8hpp_source.html">Interpreter.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Interpreter_8hpp_source.html#l00012">12</a> of file <a class="el" href="Interpreter_8hpp_source.html">Interpreter.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a2276ab36d6189c142082b2ac9696e05a" name="a2276ab36d6189c142082b2ac9696e05a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2276ab36d6189c142082b2ac9696e05a">&#9670;&#160;</a></span>error()</h2>
@@ -146,7 +155,12 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00068">68</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00080">80</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtpcpp_1_1Interpreter_a2276ab36d6189c142082b2ac9696e05a_icgraph.svg" width="722" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -174,12 +188,114 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The result of the evaluation, which is an <code><a class="el" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796" title="A std::variant type used in expression evaluation.">tpcpp::Object</a></code>. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00049">49</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00052">52</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtpcpp_1_1Interpreter_ae890f0724e478409becfced78fba29f2_cgraph.svg" width="578" height="228"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classtpcpp_1_1Interpreter_ae890f0724e478409becfced78fba29f2_icgraph.svg" width="356" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="a73a78f42558424098bb6156c9b3d488a" name="a73a78f42558424098bb6156c9b3d488a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a78f42558424098bb6156c9b3d488a">&#9670;&#160;</a></span>getVariable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> tpcpp::Interpreter::getVariable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtpcpp_1_1Box.html">const</a> std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get a global variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the variable. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00105">105</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a9ed9dbf0d7fc5d37c7a356fbc2c3f866" name="a9ed9dbf0d7fc5d37c7a356fbc2c3f866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed9dbf0d7fc5d37c7a356fbc2c3f866">&#9670;&#160;</a></span>runtimeError()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtpcpp_1_1Box.html">void</a> tpcpp::Interpreter::runtimeError </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtpcpp_1_1Box.html">const</a> <a class="el" href="structtpcpp_1_1RuntimeError.html">RuntimeError</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>error</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate a run-time error to the inteprter. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">error</td><td>A <code><a class="el" href="structtpcpp_1_1RuntimeError.html">tpcpp::RuntimeError</a></code> instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00088">88</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtpcpp_1_1Interpreter_a9ed9dbf0d7fc5d37c7a356fbc2c3f866_cgraph.svg" width="328" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classtpcpp_1_1Interpreter_a9ed9dbf0d7fc5d37c7a356fbc2c3f866_icgraph.svg" width="539" height="56"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="afa3dc406cb67e9a380aae51f8b1485f6" name="afa3dc406cb67e9a380aae51f8b1485f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3dc406cb67e9a380aae51f8b1485f6">&#9670;&#160;</a></span>setVariable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classtpcpp_1_1Box.html">void</a> tpcpp::Interpreter::setVariable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classtpcpp_1_1Box.html">const</a> std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classtpcpp_1_1Box.html">const</a> <a class="el" href="namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796">Object</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a global variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the variable. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value of the variable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="Interpreter_8cpp_source.html#l00097">97</a> of file <a class="el" href="Interpreter_8cpp_source.html">Interpreter.cpp</a>.</p>
 
 </div>
 </div>

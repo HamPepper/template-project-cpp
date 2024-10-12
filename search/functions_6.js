@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../structtpcpp_1_1PrinterExpr.html#a7e0786e0b9019fc3fdf65a7e3969d14c',1,'tpcpp::PrinterExpr']]],
-  ['operator_2a_1',['operator*',['../classtpcpp_1_1Box.html#a71a6dc06458f18a0174360b264e55bf9',1,'tpcpp::Box']]]
+  ['logicand_0',['logicAnd',['../classtpcpp_1_1Parser.html#a58e742444f01ef64c265b5f60bfab9cb',1,'tpcpp::Parser']]],
+  ['logicor_1',['logicOr',['../classtpcpp_1_1Parser.html#a6244f5f098c990b7b48d3878f17b9bf2',1,'tpcpp::Parser']]]
 ];

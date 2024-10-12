@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['term_0',['term',['../classtpcpp_1_1Parser.html#ac958f2987aa614587ba8071bbc56d40d',1,'tpcpp::Parser']]]
+  ['scantokens_0',['scanTokens',['../classtpcpp_1_1Scanner.html#afa0e728b32c9ab92e52077616c1ae495',1,'tpcpp::Scanner']]],
+  ['setvariable_1',['setVariable',['../classtpcpp_1_1Interpreter.html#afa3dc406cb67e9a380aae51f8b1485f6',1,'tpcpp::Interpreter']]]
 ];
