@@ -4,12 +4,16 @@ var hierarchy =
     [ "tpcpp::Binary", "structtpcpp_1_1Binary.html", null ],
     [ "tpcpp::Box< T >", "classtpcpp_1_1Box.html", null ],
     [ "tpcpp::Call", "structtpcpp_1_1Call.html", null ],
-    [ "tpcpp::Callable", "structtpcpp_1_1Callable.html", null ],
+    [ "tpcpp::Callable", "structtpcpp_1_1Callable.html", [
+      [ "tpcpp::Function< Func >", "structtpcpp_1_1Function.html", null ]
+    ] ],
     [ "tpcpp::EvaluatorExpr", "structtpcpp_1_1EvaluatorExpr.html", null ],
     [ "std::exception", null, [
       [ "tpcpp::Parser::ParseException", "classtpcpp_1_1Parser_1_1ParseException.html", null ],
       [ "tpcpp::RuntimeError", "structtpcpp_1_1RuntimeError.html", null ]
     ] ],
+    [ "tpcpp::FunctionTraits< T >", "structtpcpp_1_1FunctionTraits.html", null ],
+    [ "tpcpp::FunctionTraits< std::function< R(Args...)> >", "structtpcpp_1_1FunctionTraits_3_01std_1_1function_3_01R_07Args_8_8_8_08_4_01_4.html", null ],
     [ "tpcpp::Grouping", "structtpcpp_1_1Grouping.html", null ],
     [ "tpcpp::Interpreter", "classtpcpp_1_1Interpreter.html", null ],
     [ "tpcpp::Literal", "structtpcpp_1_1Literal.html", null ],

@@ -1,9 +1,9 @@
 var indexSectionsWithContent =
 {
   0: "abcefgilnoprstuv允到目调配",
-  1: "abcegiloprstuv",
+  1: "abcefgiloprstuv",
   2: "t",
-  3: "abcefgloprstu",
+  3: "abcefglnoprstu",
   4: "ceo",
   5: "cpt调",
   6: "t"

@@ -121,6 +121,12 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtpcpp_1_1EvaluatorExpr.html">EvaluatorExpr</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate each <code><a class="el" href="#ad72b8a105c6868f64db14dc3b6aa7b95" title="A variant type that can hold any of the expression types.">tpcpp::Expr</a></code> to a <code><a class="el" href="#a3640f25fd962bf93590fa45578a3b796" title="A std::variant type used in expression evaluation.">tpcpp::Object</a></code>.  <a href="structtpcpp_1_1EvaluatorExpr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtpcpp_1_1Function.html">Function</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtpcpp_1_1FunctionTraits.html">FunctionTraits</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtpcpp_1_1FunctionTraits_3_01std_1_1function_3_01R_07Args_8_8_8_08_4_01_4.html">FunctionTraits&lt; std::function&lt; R(Args...)&gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtpcpp_1_1Grouping.html">Grouping</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtpcpp_1_1Interpreter.html">Interpreter</a></td></tr>
@@ -154,20 +160,24 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concepttpcpp_1_1AllOfTheSameType.html">AllOfTheSameType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concepttpcpp_1_1ObjectToType.html">ObjectToType</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concepttpcpp_1_1IsTokenType.html">IsTokenType</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ad00d84db4919ee2323c3076504977c41" id="r_ad00d84db4919ee2323c3076504977c41"><td class="memItemLeft" align="right" valign="top"><a id="ad00d84db4919ee2323c3076504977c41" name="ad00d84db4919ee2323c3076504977c41"></a>
-<a class="el" href="classtpcpp_1_1Box.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>CallablePtr</b> = std::shared_ptr&lt;<a class="el" href="structtpcpp_1_1Callable.html">Callable</a>&gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CallablePtr</b> = std::shared_ptr&lt;<a class="el" href="structtpcpp_1_1Callable.html">Callable</a>&gt;</td></tr>
 <tr class="memdesc:ad00d84db4919ee2323c3076504977c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>std::shared_ptr</code> type for <code><a class="el" href="structtpcpp_1_1Callable.html" title="An interface for callable objects.">tpcpp::Callable</a></code>. <br /></td></tr>
 <tr class="separator:ad00d84db4919ee2323c3076504977c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3640f25fd962bf93590fa45578a3b796" id="r_a3640f25fd962bf93590fa45578a3b796"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtpcpp_1_1Box.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3640f25fd962bf93590fa45578a3b796">Object</a> = std::variant&lt;<a class="el" href="classtpcpp_1_1Box.html">bool</a>, <a class="el" href="classtpcpp_1_1Box.html">long</a>, <a class="el" href="classtpcpp_1_1Box.html">double</a>, <a class="el" href="#ad00d84db4919ee2323c3076504977c41">CallablePtr</a>&gt;</td></tr>
+<tr class="memitem:a3640f25fd962bf93590fa45578a3b796" id="r_a3640f25fd962bf93590fa45578a3b796"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3640f25fd962bf93590fa45578a3b796">Object</a> = std::variant&lt;bool, long, double, <a class="el" href="#ad00d84db4919ee2323c3076504977c41">CallablePtr</a>&gt;</td></tr>
 <tr class="memdesc:a3640f25fd962bf93590fa45578a3b796"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <code>std::variant</code> type used in expression evaluation.  <br /></td></tr>
 <tr class="separator:a3640f25fd962bf93590fa45578a3b796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad72b8a105c6868f64db14dc3b6aa7b95" id="r_ad72b8a105c6868f64db14dc3b6aa7b95"><td class="memItemLeft" align="right" valign="top"><a id="ad72b8a105c6868f64db14dc3b6aa7b95" name="ad72b8a105c6868f64db14dc3b6aa7b95"></a>
-<a class="el" href="classtpcpp_1_1Box.html">using</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Expr</b></td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>Expr</b></td></tr>
 <tr class="memdesc:ad72b8a105c6868f64db14dc3b6aa7b95"><td class="mdescLeft">&#160;</td><td class="mdescRight">A variant type that can hold any of the expression types. <br /></td></tr>
 <tr class="separator:ad72b8a105c6868f64db14dc3b6aa7b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -181,7 +191,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a3640f25fd962bf93590fa45578a3b796">tpcpp::Object</a> = std::variant&lt;<a class="el" href="classtpcpp_1_1Box.html">bool</a>, <a class="el" href="classtpcpp_1_1Box.html">long</a>, <a class="el" href="classtpcpp_1_1Box.html">double</a>, <a class="el" href="#ad00d84db4919ee2323c3076504977c41">CallablePtr</a>&gt;</td>
+          <td class="memname"><a class="el" href="#a3640f25fd962bf93590fa45578a3b796">tpcpp::Object</a> = std::variant&lt;bool, long, double, <a class="el" href="#ad00d84db4919ee2323c3076504977c41">CallablePtr</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -195,7 +205,7 @@ Typedefs</h2></td></tr>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>It is the only type used in expression evaluation. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Object_8hpp_source.html#l00031">31</a> of file <a class="el" href="Object_8hpp_source.html">Object.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Object_8hpp_source.html#l00032">32</a> of file <a class="el" href="Object_8hpp_source.html">Object.hpp</a>.</p>
 
 </div>
 </div>

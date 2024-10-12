@@ -138,8 +138,8 @@ $(function(){initNavTree('Scanner_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">// scanning</span></div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> Scanner::scanToken() {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">char</span> <a class="code hl_class" href="classtpcpp_1_1Box.html">c</a> = advance();</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">switch</span> (<a class="code hl_class" href="classtpcpp_1_1Box.html">c</a>) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keywordtype">char</span> c = advance();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="keywordflow">switch</span> (c) {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordflow">case</span> <span class="charliteral">&#39;(&#39;</span>:</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    addToken(TokenType::LEFT_PAREN);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordflow">break</span>;</div>
@@ -194,9 +194,9 @@ $(function(){initNavTree('Scanner_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordflow">break</span>; <span class="comment">// skip whitespaces and EOL indicators</span></div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (isDigit(<a class="code hl_class" href="classtpcpp_1_1Box.html">c</a>))</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">if</span> (isDigit(c))</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      number();</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isAlpha(<a class="code hl_class" href="classtpcpp_1_1Box.html">c</a>))</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (isAlpha(c))</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      identifier();</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordflow">else</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      m_interpreter.error(<span class="stringliteral">&quot;Unexpected character.&quot;</span>);</div>
@@ -298,8 +298,7 @@ $(function(){initNavTree('Scanner_8cpp_source.html',''); initResizable(); });
 <div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>}</div>
 <div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
-<div class="ttc" id="aclasstpcpp_1_1Box_html"><div class="ttname"><a href="classtpcpp_1_1Box.html">tpcpp::Box</a></div><div class="ttdoc">Boxing for all tpcpp::Expr classes.</div><div class="ttdef"><b>Definition</b> <a href="Box_8hpp_source.html#l00013">Box.hpp:13</a></div></div>
-<div class="ttc" id="anamespacetpcpp_html"><div class="ttname"><a href="namespacetpcpp.html">tpcpp</a></div><div class="ttdoc">All tpcpp classes are placed in this namespace.</div><div class="ttdef"><b>Definition</b> <a href="Interpreter_8cpp_source.html#l00016">Interpreter.cpp:16</a></div></div>
+<div class="ttc" id="anamespacetpcpp_html"><div class="ttname"><a href="namespacetpcpp.html">tpcpp</a></div><div class="ttdoc">All tpcpp classes are placed in this namespace.</div><div class="ttdef"><b>Definition</b> <a href="Interpreter_8cpp_source.html#l00020">Interpreter.cpp:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

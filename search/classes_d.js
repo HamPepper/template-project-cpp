@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['variable_0',['Variable',['../structtpcpp_1_1Variable.html',1,'tpcpp']]]
+  ['unary_0',['Unary',['../structtpcpp_1_1Unary.html',1,'tpcpp']]]
 ];
