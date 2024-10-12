@@ -11,6 +11,7 @@ var namespacetpcpp =
     [ "Logical", "structtpcpp_1_1Logical.html", null ],
     [ "OpCollector", "structtpcpp_1_1OpCollector.html", null ],
     [ "Parser", "classtpcpp_1_1Parser.html", "classtpcpp_1_1Parser" ],
+    [ "PrinterExpr", "structtpcpp_1_1PrinterExpr.html", "structtpcpp_1_1PrinterExpr" ],
     [ "RuntimeError", "structtpcpp_1_1RuntimeError.html", null ],
     [ "Scanner", "classtpcpp_1_1Scanner.html", "classtpcpp_1_1Scanner" ],
     [ "Token", "structtpcpp_1_1Token.html", null ],

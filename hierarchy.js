@@ -14,6 +14,7 @@ var hierarchy =
     [ "tpcpp::Literal", "structtpcpp_1_1Literal.html", null ],
     [ "tpcpp::Logical", "structtpcpp_1_1Logical.html", null ],
     [ "tpcpp::Parser", "classtpcpp_1_1Parser.html", null ],
+    [ "tpcpp::PrinterExpr", "structtpcpp_1_1PrinterExpr.html", null ],
     [ "tpcpp::Scanner", "classtpcpp_1_1Scanner.html", null ],
     [ "tpcpp::Token", "structtpcpp_1_1Token.html", null ],
     [ "tpcpp::Unary", "structtpcpp_1_1Unary.html", null ],
