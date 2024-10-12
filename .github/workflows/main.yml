@@ -10,6 +10,9 @@ jobs:
     build-linux:
         if: "!contains(github.event.head_commit.message, 'skip ci')"
         runs-on: ubuntu-latest
+        permissions:
+            id-token: "write"
+            contents: "write"
         steps:
             - uses: actions/checkout@v4
               with:
@@ -37,6 +40,18 @@ jobs:
             - run: cmake --build --preset debug
             - run: ctest --test-dir build -C Debug --output-on-failure
 
-
-permissions:
-    contents: write
+    build-win-no-preset-dev:
+        if: "!contains(github.event.head_commit.message, 'skip ci')"
+        runs-on: windows-latest
+        steps:
+            - uses: actions/checkout@v4
+              with:
+                  submodules: recursive
+            - uses: Cyberboss/install-winget@v1
+              with:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - run: ./tools/install-deps.ps1
+              shell: pwsh
+            - run: cmake --preset msvc
+            - run: cmake --build --preset debug
+            - run: ctest --test-dir build -C Debug --output-on-failure
