@@ -20,8 +20,10 @@ target_compile_options(tpcpp-object PRIVATE
 )
 
 file(GLOB src_tpcpp_parsing CONFIGURE_DEPENDS "src/parsing/*.cpp")
+file(GLOB src_tpcpp_visitors CONFIGURE_DEPENDS "src/visitors/*.cpp")
 add_library(tpcpp-interpreter STATIC
     ${src_tpcpp_parsing}
+    ${src_tpcpp_visitors}
     "src/Interpreter.cpp")
 target_include_directories(tpcpp-interpreter PUBLIC "inc")
 target_link_libraries(tpcpp-interpreter PUBLIC tpcpp-object)

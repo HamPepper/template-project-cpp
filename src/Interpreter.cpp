@@ -6,6 +6,11 @@
 #include "parsing/Parser.hpp"
 #include "parsing/Scanner.hpp"
 
+#define DEBUG_PARSER
+#ifdef DEBUG_PARSER
+#include "visitors/PrinterExpr.hpp"
+#endif
+
 namespace tpcpp {
 
 // local function declarations
@@ -47,6 +52,12 @@ Object Interpreter::evaluate(const std::string &source) {
 
   Parser parser(*this, tokens);
   auto exprs = parser.parse();
+
+#ifdef DEBUG_PARSER
+  PrinterExpr printer{};
+  for (const auto &e : exprs)
+    printer.print(e);
+#endif
 
   return false;
 }

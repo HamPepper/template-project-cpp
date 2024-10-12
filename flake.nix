@@ -109,6 +109,7 @@
               doxygen
               graphviz
             ] ++ config.pre-commit.settings.enabledPackages;
+
             hardeningDisable = [ "fortify" ];
 
             shellHook = ''
