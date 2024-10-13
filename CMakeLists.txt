@@ -24,7 +24,8 @@ file(GLOB src_tpcpp_visitors CONFIGURE_DEPENDS "src/visitors/*.cpp")
 add_library(tpcpp-interpreter STATIC
     ${src_tpcpp_parsing}
     ${src_tpcpp_visitors}
-    "src/Interpreter.cpp")
+    "src/Interpreter.cpp"
+)
 target_include_directories(tpcpp-interpreter PUBLIC "inc")
 target_link_libraries(tpcpp-interpreter PUBLIC tpcpp-object)
 
@@ -94,15 +95,38 @@ endforeach()
 #######
 # NOTE: this has to come after the 'extra config' section
 
-find_package(Doxygen)
+find_package(Doxygen OPTIONAL_COMPONENTS dot)
 
 if(DOXYGEN_FOUND)
-    configure_file(${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
-                   ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile @ONLY)
+    set(DOXYGEN_WARN_AS_ERROR NO)
+    set(DOXYGEN_FILE_PATTERN ".cpp;.hpp")
 
-    add_custom_target(doc ALL
-                      COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
-                      WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-                      COMMENT "Generating API documentation with Doxygen"
-                      VERBATIM)
+    set(DOXYGEN_USE_MDFILE_AS_MAINPAGE "README.md")
+    set(DOXYGEN_SOURCE_BROWSER YES)
+    set(DOXYGEN_STRIP_FROM_INC_PATH "${CMAKE_CURRENT_SOURCE_DIR}/inc")
+
+    set(DOXYGEN_HIDE_UNDOC_MEMBERS YES)
+    set(DOXYGEN_EXTRACT_PRIVATE YES)
+
+    # doxygen-awesome
+    set(DOXYGEN_GENERATE_TREEVIEW YES)
+    set(DOXYGEN_DISABLE_INDEX NO)
+    set(DOXYGEN_FULL_SIDEBAR NO)
+    set(DOXYGEN_HTML_EXTRA_STYLESHEET
+        "doc/doxygen-awesome-css/doxygen-awesome.css"
+        "doc/doxygen-awesome-css/doxygen-awesome-sidebar-only.css"
+    )
+    set(DOXYGEN_HTML_COLORSTYLE "LIGHT")
+
+    # graphviz
+    set(DOXYGEN_CALL_GRAPH YES)
+    set(DOXYGEN_CALLER_GRAPH YES)
+    set(DOXYGEN_COLLABORATION_GRAPH YES)
+    set(DOXYGEN_DOT_IMAGE_FORMAT "svg")
+
+    doxygen_add_docs(doc
+        "inc" "src" "README.md"
+        "doc/debug.md"
+        COMMENT "Generate API documentation"
+    )
 endif()

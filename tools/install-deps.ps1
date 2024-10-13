@@ -23,7 +23,7 @@ param(
 $pkgs = @(
     "Kitware.CMake"
     "DimitriVanHeesch.Doxygen"
-    "Graphviz.Graphviz"
+    #"Graphviz.Graphviz"  # can't generate SVG graph, at least on github action
 )
 
 WinGet-Install-All $pkgs

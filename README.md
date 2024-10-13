@@ -35,7 +35,7 @@ git submodule update --init --recursive  # 初始化子模块
 #### Windows
 
 ```powershell
-# 占位符
+pwsh -File .\tools\install-deps.ps1
 ```
 
 #### Linux/macOS
@@ -44,7 +44,7 @@ git submodule update --init --recursive  # 初始化子模块
 # 使用 DeterminateSystems 的 Nix 安装器。该安装器自带 flake 支持
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 
-# 打开工程根目录
+# 打开工程根目录，然后执行以下命令
 nix develop
 
 # 后续流程要在 nix develop 后的 shell 中执行
@@ -59,6 +59,9 @@ nix develop
 cmake --preset msvc
 cmake --build --preset debug
 cmake --build --preset release
+
+# 构建 doxygen 文档
+cmake --build --preset debug --target doc
 ```
 
 #### Linux/macOS
@@ -66,6 +69,9 @@ cmake --build --preset release
 ```bash
 cmake --preset debug && cmake --build build/Debug
 cmake --preset release && cmake --build build/Release
+
+# 构建 doxygen 文档
+cmake --build build/Debug --target doc
 ```
 
 
