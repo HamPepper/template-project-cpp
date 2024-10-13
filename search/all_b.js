@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['parse_0',['parse',['../classtpcpp_1_1Parser.html#a2923635437cd22b12ef8a80a0317da95',1,'tpcpp::Parser']]],
-  ['parseexception_1',['ParseException',['../classtpcpp_1_1Parser_1_1ParseException.html',1,'tpcpp::Parser']]],
-  ['parser_2',['Parser',['../classtpcpp_1_1Parser.html',1,'tpcpp']]],
-  ['primary_3',['primary',['../classtpcpp_1_1Parser.html#afc760e93b6186a044a4582f538e161a1',1,'tpcpp::Parser']]],
-  ['print_4',['print',['../structtpcpp_1_1PrinterExpr.html#a713e84bcc8586612939cea3508f0ce98',1,'tpcpp::PrinterExpr']]],
-  ['printerexpr_5',['PrinterExpr',['../structtpcpp_1_1PrinterExpr.html',1,'tpcpp']]],
-  ['project_20cpp_6',['template-project-cpp',['../index.html',1,'']]]
+  ['registerfunctions_0',['registerFunctions',['../classtpcpp_1_1Interpreter.html#ab604b991971a470e6cd92f57f2d1a4c9',1,'tpcpp::Interpreter']]],
+  ['run_1',['run',['../classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973',1,'tpcpp::Interpreter']]],
+  ['runtimeerror_2',['RuntimeError',['../structtpcpp_1_1RuntimeError.html',1,'tpcpp']]],
+  ['runtimeerror_3',['runtimeError',['../classtpcpp_1_1Interpreter.html#a9ed9dbf0d7fc5d37c7a356fbc2c3f866',1,'tpcpp::Interpreter']]]
 ];

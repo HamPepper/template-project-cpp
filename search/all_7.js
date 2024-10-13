@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['linux_20macos_0',['Linux macOS',['../index.html#autotoc_md6',1,'Linux/macOS'],['../index.html#autotoc_md9',1,'Linux/macOS'],['../index.html#autotoc_md12',1,'Linux/macOS']]],
+  ['linux_0',['Linux',['../index.html#autotoc_md6',1,'Linux'],['../index.html#autotoc_md9',1,'Linux'],['../index.html#autotoc_md12',1,'Linux']]],
   ['literal_1',['Literal',['../structtpcpp_1_1Literal.html',1,'tpcpp']]],
   ['logical_2',['Logical',['../structtpcpp_1_1Logical.html',1,'tpcpp']]],
   ['logicand_3',['logicAnd',['../classtpcpp_1_1Parser.html#a58e742444f01ef64c265b5f60bfab9cb',1,'tpcpp::Parser']]],

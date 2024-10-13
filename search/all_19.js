@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['调试（debug）配置与技巧_0',['调试（Debug）配置与技巧',['../md_doc_2debug.html',1,'']]]
+  ['运行测试_0',['运行测试',['../index.html#autotoc_md10',1,'']]]
 ];

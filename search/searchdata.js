@@ -1,6 +1,6 @@
 var indexSectionsWithContent =
 {
-  0: "abcefgilmnoprstuvw使允克到安构目调运配",
+  0: "abcefgilnoprstuvw使允克到安构目调运配",
   1: "abcefgiloprstuv",
   2: "t",
   3: "abcefglnoprstu",

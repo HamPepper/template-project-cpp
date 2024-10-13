@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['克隆项目_0',['克隆项目',['../index.html#autotoc_md3',1,'']]]
+  ['到任意进程_0',['允许 GDB attach 到任意进程',['../md_doc_2debug.html#autotoc_md15',1,'']]]
 ];

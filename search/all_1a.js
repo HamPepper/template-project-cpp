@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['运行测试_0',['运行测试',['../index.html#autotoc_md10',1,'']]]
+  ['配置_20neovim_0',['配置 NeoVim',['../md_doc_2debug.html#autotoc_md16',1,'']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['name_0',['name',['../structtpcpp_1_1Function.html#a80a1b533755a9e2db4f5ce984aa0ae1b',1,'tpcpp::Function::name()'],['../structtpcpp_1_1Callable.html#a5917a3644a60ef0125c53efd583133fa',1,'tpcpp::Callable::name()']]],
-  ['neovim_1',['配置 NeoVim',['../md_doc_2debug.html#autotoc_md16',1,'']]],
-  ['neovim_20gdb_2',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md14',1,'']]],
-  ['nixos_20neovim_20gdb_3',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md14',1,'']]]
+  ['object_0',['Object',['../namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796',1,'tpcpp']]],
+  ['opcollector_1',['OpCollector',['../structtpcpp_1_1OpCollector.html',1,'tpcpp']]],
+  ['operator_28_29_2',['operator()',['../structtpcpp_1_1EvaluatorExpr.html#a3e60f027e05e06cc6cac11a553bc1069',1,'tpcpp::EvaluatorExpr::operator()()'],['../structtpcpp_1_1PrinterExpr.html#a7e0786e0b9019fc3fdf65a7e3969d14c',1,'tpcpp::PrinterExpr::operator()()']]],
+  ['operator_2a_3',['operator*',['../classtpcpp_1_1Box.html#a71a6dc06458f18a0174360b264e55bf9',1,'tpcpp::Box']]]
 ];

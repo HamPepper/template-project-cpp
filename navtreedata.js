@@ -30,15 +30,15 @@ var NAVTREE =
       [ "克隆项目", "index.html#autotoc_md3", null ],
       [ "安装依赖", "index.html#autotoc_md4", [
         [ "Windows", "index.html#autotoc_md5", null ],
-        [ "Linux/macOS", "index.html#autotoc_md6", null ]
+        [ "Linux", "index.html#autotoc_md6", null ]
       ] ],
       [ "构建项目", "index.html#autotoc_md7", [
         [ "Windows", "index.html#autotoc_md8", null ],
-        [ "Linux/macOS", "index.html#autotoc_md9", null ]
+        [ "Linux", "index.html#autotoc_md9", null ]
       ] ],
       [ "运行测试", "index.html#autotoc_md10", [
         [ "Windows", "index.html#autotoc_md11", null ],
-        [ "Linux/macOS", "index.html#autotoc_md12", null ]
+        [ "Linux", "index.html#autotoc_md12", null ]
       ] ]
     ] ],
     [ "调试（Debug）配置与技巧", "md_doc_2debug.html", [
