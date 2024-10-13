@@ -122,13 +122,13 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 安装依赖</h2>
 <h3><a class="anchor" id="autotoc_md5"></a>
 Windows</h3>
-<div class="fragment"><div class="line"># 占位符</div>
+<div class="fragment"><div class="line">pwsh -File .\tools\install-deps.ps1</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md6"></a>
 Linux/macOS</h3>
 <div class="fragment"><div class="line"># 使用 DeterminateSystems 的 Nix 安装器。该安装器自带 flake 支持</div>
 <div class="line">curl --proto &#39;=https&#39; --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install</div>
 <div class="line"> </div>
-<div class="line"># 打开工程根目录</div>
+<div class="line"># 打开工程根目录，然后执行以下命令</div>
 <div class="line">nix develop</div>
 <div class="line"> </div>
 <div class="line"># 后续流程要在 nix develop 后的 shell 中执行</div>
@@ -139,10 +139,16 @@ Windows</h3>
 <div class="fragment"><div class="line">cmake --preset msvc</div>
 <div class="line">cmake --build --preset debug</div>
 <div class="line">cmake --build --preset release</div>
+<div class="line"> </div>
+<div class="line"># 构建 doxygen 文档</div>
+<div class="line">cmake --build --preset debug --target doc</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
 Linux/macOS</h3>
 <div class="fragment"><div class="line">cmake --preset debug &amp;&amp; cmake --build build/Debug</div>
 <div class="line">cmake --preset release &amp;&amp; cmake --build build/Release</div>
+<div class="line"> </div>
+<div class="line"># 构建 doxygen 文档</div>
+<div class="line">cmake --build build/Debug --target doc</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
 运行测试</h2>
 <h3><a class="anchor" id="autotoc_md11"></a>

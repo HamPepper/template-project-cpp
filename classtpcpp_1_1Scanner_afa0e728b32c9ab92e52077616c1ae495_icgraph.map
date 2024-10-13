@@ -1,7 +1,5 @@
 <map id="tpcpp::Scanner::scanTokens" name="tpcpp::Scanner::scanTokens">
-<area shape="rect" id="Node000001" title="Scan the source code stored in m_source." alt="" coords="399,14,598,42"/>
-<area shape="rect" id="Node000002" href="$classtpcpp_1_1Interpreter.html#ae890f0724e478409becfced78fba29f2" title="Evaluate a given string." alt="" coords="217,5,351,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="384,30,351,30,351,25,384,25"/>
-<area shape="rect" id="Node000003" href="$classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973" title="Start the interpreter REPL loop." alt="" coords="5,14,169,42"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,30,169,30,169,25,201,25"/>
+<area shape="rect" id="Node000001" title="Scan the source code stored in m_source." alt="" coords="188,14,387,42"/>
+<area shape="rect" id="Node000002" href="$classtpcpp_1_1Interpreter.html#ae890f0724e478409becfced78fba29f2" title="Evaluate a given string." alt="" coords="5,5,140,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,30,140,30,140,25,172,25"/>
 </map>

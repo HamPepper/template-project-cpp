@@ -1,16 +1,12 @@
 <map id="tpcpp::Interpreter::evaluate" name="tpcpp::Interpreter::evaluate">
-<area shape="rect" id="Node000001" title="Evaluate a given string." alt="" coords="5,92,140,136"/>
+<area shape="rect" id="Node000001" title="Evaluate a given string." alt="" coords="5,57,140,102"/>
 <area shape="rect" id="Node000002" href="$classtpcpp_1_1Parser.html#a2923635437cd22b12ef8a80a0317da95" title="Parse input tokens into expressions." alt="" coords="213,5,362,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,89,142,65,187,42,204,36,205,41,189,47,145,69,107,93"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="139,56,187,42,213,35,214,40,188,47,141,61"/>
 <area shape="rect" id="Node000003" href="$structtpcpp_1_1PrinterExpr.html#a713e84bcc8586612939cea3508f0ce98" title="Print a tpcpp::Expr to stdout." alt="" coords="219,57,356,102"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,100,203,90,204,95,140,106"/>
-<area shape="rect" id="Node000005" href="$classtpcpp_1_1Interpreter.html#a9ed9dbf0d7fc5d37c7a356fbc2c3f866" title="Indicate a run&#45;time error to the inteprter." alt="" coords="220,126,354,171"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="140,122,205,133,205,138,139,127"/>
-<area shape="rect" id="Node000007" href="$classtpcpp_1_1Scanner.html#afa0e728b32c9ab92e52077616c1ae495" title="Scan the source code stored in m_source." alt="" coords="188,195,387,222"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="107,134,145,159,189,181,205,187,204,192,187,186,142,163,104,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="140,76,203,76,203,82,140,82"/>
+<area shape="rect" id="Node000005" href="$classtpcpp_1_1Scanner.html#afa0e728b32c9ab92e52077616c1ae495" title="Scan the source code stored in m_source." alt="" coords="188,125,387,153"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="141,97,188,111,214,118,213,123,187,116,139,102"/>
 <area shape="rect" id="Node000004" href="$structtpcpp_1_1PrinterExpr.html#a7e0786e0b9019fc3fdf65a7e3969d14c" title="Convert a tpcpp::Expr to a string." alt="" coords="435,57,572,102"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="356,76,419,76,419,82,356,82"/>
 <area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="462,57,461,47,468,38,482,32,504,30,527,33,541,39,539,44,526,38,504,35,484,37,471,42,466,48,467,56"/>
-<area shape="rect" id="Node000006" href="$classtpcpp_1_1Interpreter.html#a2276ab36d6189c142082b2ac9696e05a" title="Indicate a parsing&#45;time error to the inteprter." alt="" coords="436,126,571,171"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="355,146,421,146,421,151,355,151"/>
 </map>
