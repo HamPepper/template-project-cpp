@@ -15,7 +15,7 @@ C++ 项目模板。
 - ✅ 使用 `doxygen + dot` 生成文档
 - ✅ 配置 Github Actions 自动化构建项目并生成文档
 - ❌ 自动配置开发环境
-    - ✅ 在 Linux/macOS 下使用 `nix` 安装依赖
+    - ✅ 在 Linux 下使用 `nix` 安装依赖
     - ❌ 在 Windows 下使用 PowerShell 脚本安装依赖
 
 
@@ -38,7 +38,7 @@ git submodule update --init --recursive  # 初始化子模块
 pwsh -File .\tools\install-deps.ps1
 ```
 
-#### Linux/macOS
+#### Linux
 
 ```bash
 # 使用 DeterminateSystems 的 Nix 安装器。该安装器自带 flake 支持
@@ -64,7 +64,7 @@ cmake --build --preset release
 cmake --build --preset debug --target doc
 ```
 
-#### Linux/macOS
+#### Linux
 
 ```bash
 cmake --preset debug && cmake --build build/Debug
@@ -83,7 +83,7 @@ cmake --build build/Debug --target doc
 ctest --test-dir build -C Debug --output-on-failure
 ```
 
-#### Linux/macOS
+#### Linux
 
 ```bash
 ctest --test-dir build/Debug --output-on-failure

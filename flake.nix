@@ -47,7 +47,11 @@
         git-hooks.flakeModule
       ];
 
-      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      #systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
+      # darwin's still on clang 16, which disables various c++ 20 features,
+      # such as std::format, by default.
+      # disable darwin support for now.
+      systems = [ "x86_64-linux" "aarch64-linux" ];
 
       perSystem =
         { system, inputs', pkgs', config, ... }:
@@ -93,8 +97,6 @@
 
             buildInputs = with pkgs'; [
               cmake
-              gdb
-              cgdb
 
               # utilities
               dos2unix
@@ -108,7 +110,10 @@
               # doc
               doxygen
               graphviz
-            ] ++ config.pre-commit.settings.enabledPackages;
+            ]
+            ++ config.pre-commit.settings.enabledPackages
+            ++ pkgs'.lib.optionals pkgs'.stdenv.isLinux
+              [ gdb cgdb ];
 
             hardeningDisable = [ "fortify" ];
 
