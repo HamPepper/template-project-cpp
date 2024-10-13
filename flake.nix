@@ -40,6 +40,10 @@
             cmake --preset debug && cmake --build build/Debug
             ctest --test-dir build/Debug --output-on-failure
           '';
+          helperW = prev.writeShellScriptBin "W" ''
+            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
+            emcmake cmake -B build/wasm && cmake --build build/wasm
+          '';
         };
     in
     flake-parts.lib.mkFlake { inherit inputs; } ({ getSystem, ... }: {
@@ -97,6 +101,7 @@
 
             buildInputs = with pkgs'; [
               cmake
+              emscripten # for wasm target
 
               # utilities
               dos2unix
@@ -106,6 +111,7 @@
               helperC
               helperD
               helperT
+              helperW
 
               # doc
               doxygen
