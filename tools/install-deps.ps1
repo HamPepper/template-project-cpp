@@ -24,12 +24,16 @@ $pkgs = @(
     "Kitware.CMake"
     "DimitriVanHeesch.Doxygen"
     #"Graphviz.Graphviz"  # can't generate SVG graph, at least on github action
+
+    # optional tools
+    "astral-sh.uv"  # for compdb & other Python-based tools
 )
 
 WinGet-Install-All $pkgs
 
 
 # msvc
+Write-Output "install MSVC..."
 winget install -e --id Microsoft.VisualStudio.2022.BuildTools `
     -s winget `
     --no-upgrade `
