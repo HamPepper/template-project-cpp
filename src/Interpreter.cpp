@@ -79,7 +79,7 @@ Object Interpreter::evaluate(const std::string &source) {
   return result;
 }
 
-/// @brief Indicate a parsing-time error to the inteprter.
+/// @brief Indicate a parsing-time error to the intepreter.
 ///
 /// @param[in] message The error message.
 void Interpreter::error(const std::string &message) {
@@ -87,7 +87,7 @@ void Interpreter::error(const std::string &message) {
   m_hadError = true;
 }
 
-/// @brief Indicate a run-time error to the inteprter.
+/// @brief Indicate a run-time error to the intepreter.
 ///
 /// @param[in] error A `tpcpp::RuntimeError` instance.
 void Interpreter::runtimeError(const RuntimeError &error) {
@@ -138,11 +138,11 @@ void Interpreter::registerFunctions() {
 
   reg(CallablePtr{new Function{"max",
       std::function<double(double, double)>{
-          [](double x, double y) -> double {return std::max(x, y); }
+          [](double x, double y) -> double { return std::max(x, y); }
       }}});
   reg(CallablePtr{new Function{"min",
       std::function<double(double, double)>{
-          [](double x, double y) -> double {return std::min(x, y); }
+          [](double x, double y) -> double { return std::min(x, y); }
       }}});
   // clang-format on
 }
