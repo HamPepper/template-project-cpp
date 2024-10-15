@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['调试（debug）配置与技巧_0',['调试（Debug）配置与技巧',['../md_doc_2debug.html',1,'']]]
+  ['安装依赖_0',['安装依赖',['../index.html#autotoc_md4',1,'']]],
+  ['安装_20cmake_20msvc_20doxygen_20uv_1',['安装 cmake + MSVC + doxygen + uv',['../md_doc_2dev.html#autotoc_md19',1,'']]]
 ];

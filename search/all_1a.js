@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['配置_20neovim_0',['配置 NeoVim',['../md_doc_2debug.html#autotoc_md16',1,'']]]
+  ['生成_20tt_20compile_5fcommands_20json_20tt_0',['生成 &lt;tt&gt;compile_commands.json&lt;/tt&gt;',['../md_doc_2dev.html#autotoc_md21',1,'']]]
 ];

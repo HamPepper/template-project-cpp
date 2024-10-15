@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['factor_0',['factor',['../classtpcpp_1_1Parser.html#ad8f555110c2ff61b82b15903f139fee6',1,'tpcpp::Parser']]],
-  ['finishcall_1',['finishCall',['../classtpcpp_1_1Parser.html#a7cdfcd8ed87d350a7af5261b0d8beca3',1,'tpcpp::Parser']]],
-  ['function_2',['Function',['../structtpcpp_1_1Function.html',1,'tpcpp']]],
-  ['functiontraits_3',['FunctionTraits',['../structtpcpp_1_1FunctionTraits.html',1,'tpcpp']]],
-  ['functiontraits_3c_20std_3a_3afunction_3c_20r_28args_2e_2e_2e_29_3e_20_3e_4',['FunctionTraits&lt; std::function&lt; R(Args...)&gt; &gt;',['../structtpcpp_1_1FunctionTraits_3_01std_1_1function_3_01R_07Args_8_8_8_08_4_01_4.html',1,'tpcpp']]]
+  ['equality_0',['equality',['../classtpcpp_1_1Parser.html#ac601ef3f2f5e697b00c14d09cdbd76ca',1,'tpcpp::Parser']]],
+  ['error_1',['error',['../classtpcpp_1_1Interpreter.html#a2276ab36d6189c142082b2ac9696e05a',1,'tpcpp::Interpreter']]],
+  ['evaluate_2',['evaluate',['../classtpcpp_1_1Interpreter.html#ae890f0724e478409becfced78fba29f2',1,'tpcpp::Interpreter']]],
+  ['evaluatorexpr_3',['EvaluatorExpr',['../structtpcpp_1_1EvaluatorExpr.html',1,'tpcpp']]],
+  ['exponent_4',['exponent',['../classtpcpp_1_1Parser.html#a7a6273e9b024e761ae39513db6954501',1,'tpcpp::Parser']]],
+  ['expr_5',['Expr',['../namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95',1,'tpcpp']]],
+  ['expression_6',['expression',['../classtpcpp_1_1Parser.html#ab360ca7eadc7d307f6749742619deb8d',1,'tpcpp::Parser']]]
 ];

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>template-project-cpp: template-project-cpp</title>
+<title>template-project-cpp: 配置开发环境</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,7 +67,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('index.html',''); initResizable(); });
+$(function(){initNavTree('md_doc_2dev.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -93,74 +93,38 @@ $(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">template-project-cpp </div></div>
+  <div class="headertitle"><div class="title">配置开发环境</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> <a href="https://github.com/HamPepper/template-project-cpp/actions?query=workflow%3ACI"><img src="https://github.com/HamPepper/template-project-cpp/actions/workflows/main.yml/badge.svg" alt="github CI 状态" style="pointer-events: none;" class="inline"/></a></p>
-<p>C++ 项目模板。 本项目包含一个简单的命令行计算器 <code>tpcpp</code>。 该计算器基于 Robert Nystrom 的 <a href="https://craftinginterpreters.com/"><em>Crafting Interpreters</em></a> 一书中的代码实现。 项目文档地址：<a href="https://hampepper.github.io/template-project-cpp">hampepper.github.io/template-project-cpp</a></p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-目标</h1>
-<ul>
-<li>✅ 使用 <code>cmake</code> 构建项目</li>
-<li>✅ 使用 <code>ctest</code> 进行单元测试</li>
-<li>✅ 使用 <code>doxygen + dot</code> 生成文档</li>
-<li>✅ 配置 <code>pre-commit</code> 以在提交前确认文件格式符合要求</li>
-<li>✅ 配置 Github Actions 自动化构建项目并生成文档</li>
-<li>✅ 自动配置开发环境<ul>
-<li>✅ 在 Linux 下使用 <code>nix</code> 安装依赖</li>
-<li>✅ 在 Windows 下使用 PowerShell 脚本安装依赖</li>
+<div class="toc"><h3>Table of Contents</h3>
+<ul><li class="level1"><a href="#autotoc_md18">Windows</a><ul><li class="level2"><a href="#autotoc_md19">安装 cmake + MSVC + doxygen + uv</a></li>
+<li class="level2"><a href="#autotoc_md20">配置 pre-commit 钩子</a></li>
+<li class="level2"><a href="#autotoc_md21">生成 &lt;tt&gt;compile_commands.json&lt;/tt&gt;</a></li>
 </ul>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-使用方法</h1>
-<h2><a class="anchor" id="autotoc_md3"></a>
-克隆项目</h2>
-<div class="fragment"><div class="line">git clone https://github.com/HamPepper/template-project-cpp.git</div>
-<div class="line">cd template-project-cpp</div>
-<div class="line">git submodule update --init --recursive  # 初始化子模块</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
-安装依赖</h2>
-<h3><a class="anchor" id="autotoc_md5"></a>
-Windows</h3>
+</div>
+<div class="textblock"><p><a class="anchor" id="autotoc_md17"></a></p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Windows</h1>
+<p>下述脚本会调用 <code>winget</code> 安装程序。确保 <code>winget</code> 可用。</p>
+<h2><a class="anchor" id="autotoc_md19"></a>
+安装 cmake + MSVC + doxygen + uv</h2>
+<p>编译本项目需要 <code>cmake</code> 和 <code>msvc</code>。简化开发环境配置的额外脚本依赖于<code>uv</code>。</p>
 <div class="fragment"><div class="line">pwsh -File .\tools\install-deps.ps1</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md6"></a>
-Linux</h3>
-<div class="fragment"><div class="line"># 使用 DeterminateSystems 的 Nix 安装器。该安装器自带 flake 支持</div>
-<div class="line">curl --proto &#39;=https&#39; --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install</div>
-<div class="line"> </div>
-<div class="line"># 打开工程根目录，然后执行以下命令</div>
-<div class="line">nix develop</div>
-<div class="line"> </div>
-<div class="line"># 后续流程要在 nix develop 后的 shell 中执行</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
-构建项目</h2>
-<h3><a class="anchor" id="autotoc_md8"></a>
-Windows</h3>
-<div class="fragment"><div class="line">cmake --preset msvc</div>
-<div class="line">cmake --build --preset debug</div>
-<div class="line">cmake --build --preset release</div>
-<div class="line"> </div>
-<div class="line"># 构建 doxygen 文档</div>
-<div class="line">cmake --build --preset debug --target doc</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
-Linux</h3>
-<div class="fragment"><div class="line">cmake --preset debug &amp;&amp; cmake --build build/Debug</div>
-<div class="line">cmake --preset release &amp;&amp; cmake --build build/Release</div>
-<div class="line"> </div>
-<div class="line"># 构建 doxygen 文档</div>
-<div class="line">cmake --build build/Debug --target doc</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
-运行测试</h2>
-<h3><a class="anchor" id="autotoc_md11"></a>
-Windows</h3>
-<div class="fragment"><div class="line">ctest --test-dir build -C Debug --output-on-failure</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md12"></a>
-Linux</h3>
-<div class="fragment"><div class="line">ctest --test-dir build/Debug --output-on-failure</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
-<a href="doxygen_crawl.html"/>
-</div><!-- contents -->
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
+配置 pre-commit 钩子</h2>
+<p><code>pre-commit</code> 配置后可在 <code>git commit</code> 前检查修改的文件是否符合格式要求。</p>
+<div class="fragment"><div class="line">pwsh -File .\tools\configure-pre-commit.ps1</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
+生成 <code>compile_commands.json</code></h2>
+<p><code>compile_commands.json</code> 用于向 VS code 等 IDE 的 language server 提供工程信息， 以供自动补全。</p>
+<p>生成该命令需要安装 <code>ninja</code>。可使用如下命令安装</p>
+<div class="fragment"><div class="line">uv tool install ninja</div>
+</div><!-- fragment --><p>安装完成后，运行如下脚本：</p>
+<div class="fragment"><div class="line">pwsh -File .\tools\gen-compdb.ps1</div>
+</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

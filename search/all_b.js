@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['registerfunctions_0',['registerFunctions',['../classtpcpp_1_1Interpreter.html#ab604b991971a470e6cd92f57f2d1a4c9',1,'tpcpp::Interpreter']]],
-  ['run_1',['run',['../classtpcpp_1_1Interpreter.html#a7ccf59509a652749a1ecf35d04439973',1,'tpcpp::Interpreter']]],
-  ['runtimeerror_2',['RuntimeError',['../structtpcpp_1_1RuntimeError.html',1,'tpcpp']]],
-  ['runtimeerror_3',['runtimeError',['../classtpcpp_1_1Interpreter.html#a9ed9dbf0d7fc5d37c7a356fbc2c3f866',1,'tpcpp::Interpreter']]]
+  ['name_0',['name',['../structtpcpp_1_1Function.html#a80a1b533755a9e2db4f5ce984aa0ae1b',1,'tpcpp::Function::name()'],['../structtpcpp_1_1Callable.html#a5917a3644a60ef0125c53efd583133fa',1,'tpcpp::Callable::name()']]],
+  ['neovim_1',['配置 NeoVim',['../md_doc_2debug.html#autotoc_md16',1,'']]],
+  ['neovim_20gdb_2',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md14',1,'']]],
+  ['nixos_20neovim_20gdb_3',['NixOS + NeoVim + GDB',['../md_doc_2debug.html#autotoc_md14',1,'']]]
 ];

@@ -47,6 +47,13 @@ var NAVTREE =
         [ "配置 NeoVim", "md_doc_2debug.html#autotoc_md16", null ]
       ] ]
     ] ],
+    [ "配置开发环境", "md_doc_2dev.html", [
+      [ "Windows", "md_doc_2dev.html#autotoc_md18", [
+        [ "安装 cmake + MSVC + doxygen + uv", "md_doc_2dev.html#autotoc_md19", null ],
+        [ "配置 pre-commit 钩子", "md_doc_2dev.html#autotoc_md20", null ],
+        [ "生成 compile_commands.json", "md_doc_2dev.html#autotoc_md21", null ]
+      ] ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
