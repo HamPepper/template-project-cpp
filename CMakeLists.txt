@@ -127,6 +127,7 @@ if(DOXYGEN_FOUND)
     doxygen_add_docs(doc
         "inc" "src" "README.md"
         "doc/debug.md"
+        "doc/dev.md"
         COMMENT "Generate API documentation"
     )
 endif()

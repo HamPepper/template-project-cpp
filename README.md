@@ -13,10 +13,11 @@ C++ 项目模板。
 - ✅ 使用 `cmake` 构建项目
 - ✅ 使用 `ctest` 进行单元测试
 - ✅ 使用 `doxygen + dot` 生成文档
+- ✅ 配置 `pre-commit` 以在提交前确认文件格式符合要求
 - ✅ 配置 Github Actions 自动化构建项目并生成文档
-- ❌ 自动配置开发环境
+- ✅ 自动配置开发环境
     - ✅ 在 Linux 下使用 `nix` 安装依赖
-    - ❌ 在 Windows 下使用 PowerShell 脚本安装依赖
+    - ✅ 在 Windows 下使用 PowerShell 脚本安装依赖
 
 
 ## 使用方法
