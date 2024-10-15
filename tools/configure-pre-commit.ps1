@@ -27,10 +27,6 @@ repos:
 "@
 
 
-# install pre-commit
-uv tool install pre-commit
-
-
 # configure PATH
 function AddTo-EnvVar{
 param(
@@ -49,6 +45,12 @@ param(
     }
 }
 
+
+# install pre-commit
+$wingetPath = -join([Environment]::GetEnvironmentVariable("LOCALAPPDATA"), "\Microsoft\WinGet\Links")
+$uvExe = -join($wingetPath, "\uv.exe")
+& $uvExe tool install pre-commit
+
 $uvToolPath = -join([Environment]::GetEnvironmentVariable("USERPROFILE"), "\.local\bin")
 AddTo-EnvVar $uvToolPath "PATH"
 
@@ -60,5 +62,7 @@ Set-Content -Path $preCommitConfigFile -Value $preCommitJson
 
 # install pre-commit hooks
 Set-Location -Path $parentDir
-pre-commit
-pre-commit install
+$preCommitExe = -join($uvToolPath, "\pre-commit.exe")
+& $preCommitExe
+& $preCommitExe install
+& $preCommitExe run --all

@@ -72,10 +72,9 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - run: ./tools/install-deps.ps1
               shell: pwsh
+            - run: ./tools/configure-pre-commit.ps1
+              shell: pwsh
             - run: cmake --preset msvc
             - run: cmake --build --preset debug
             - run: ctest --test-dir build -C Debug --output-on-failure
             - run: cmake --build --preset debug --target doc
-            - run: ./tools/configure-pre-commit.ps1
-              shell: pwsh
-            - run: pre-commit run --all

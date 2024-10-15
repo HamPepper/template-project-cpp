@@ -26,7 +26,7 @@ $pkgs = @(
     #"Graphviz.Graphviz"  # can't generate SVG graph, at least on github action
 
     # optional tools
-    "astral-sh.uv"  # for compdb & other Python-based tools
+    "astral-sh.uv"  # for compdb & pre-commit
 )
 
 WinGet-Install-All $pkgs
