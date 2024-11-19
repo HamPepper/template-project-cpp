@@ -20,7 +20,7 @@
             "name": "debug",
             "description": "Debug config on Unix",
             "binaryDir": "${sourceDir}/build/Debug",
-            "generator": "Unix Makefiles",
+            "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",

@@ -97,6 +97,7 @@
 
             buildInputs = with pkgs'; [
               cmake
+              ninja
 
               # utilities
               dos2unix
