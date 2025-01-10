@@ -22,9 +22,9 @@ var hierarchy =
     [ "tpcpp::PrinterExpr", "structtpcpp_1_1PrinterExpr.html", null ],
     [ "tpcpp::Scanner", "classtpcpp_1_1Scanner.html", null ],
     [ "tpcpp::Token", "structtpcpp_1_1Token.html", null ],
-    [ "tpcpp::Unary", "structtpcpp_1_1Unary.html", null ],
-    [ "tpcpp::Variable", "structtpcpp_1_1Variable.html", null ],
-    [ "tpcpp::Ts", null, [
+    [ "Ts...", null, [
       [ "tpcpp::OpCollector< Ts >", "structtpcpp_1_1OpCollector.html", null ]
-    ] ]
+    ] ],
+    [ "tpcpp::Unary", "structtpcpp_1_1Unary.html", null ],
+    [ "tpcpp::Variable", "structtpcpp_1_1Variable.html", null ]
 ];

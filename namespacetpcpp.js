@@ -24,7 +24,7 @@ var namespacetpcpp =
     [ "AllOfTheSameType", "concepttpcpp_1_1AllOfTheSameType.html", null ],
     [ "ObjectToType", "concepttpcpp_1_1ObjectToType.html", null ],
     [ "IsTokenType", "concepttpcpp_1_1IsTokenType.html", null ],
-    [ "CallablePtr", "namespacetpcpp.html#ad00d84db4919ee2323c3076504977c41", null ],
-    [ "Expr", "namespacetpcpp.html#ad72b8a105c6868f64db14dc3b6aa7b95", null ],
-    [ "Object", "namespacetpcpp.html#a3640f25fd962bf93590fa45578a3b796", null ]
+    [ "CallablePtr", "namespacetpcpp.html#a1ee0df5a4159c1e326e4b6620e6796f3", null ],
+    [ "Expr", "namespacetpcpp.html#a9ab2e967be0ebef9b26e138d827bef6b", null ],
+    [ "Object", "namespacetpcpp.html#afad38cf7f588fc48500137541fd292e6", null ]
 ];
