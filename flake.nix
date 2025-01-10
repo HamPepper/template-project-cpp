@@ -18,7 +18,7 @@
 
       systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
-      perSystem = { config, system, inputs', pkgs', ... }:
+      perSystem = { config, system, pkgs', ... }:
         let
           clang-tools-18 = pkgs'.llvmPackages_18.clang-tools;
           clang-format = pkgs'.runCommand "clang-format-wrapper" { } ''
@@ -27,7 +27,7 @@
           '';
         in
         rec {
-          _module.args.pkgs' = import self.inputs.nixpkgs { inherit system; };
+          _module.args.pkgs' = import nixpkgs { inherit system; };
 
           pre-commit = {
             check.enable = true;
@@ -81,6 +81,7 @@
                   if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
                   cmake --preset debug
                   compdb -p build/Debug/ list > compile_commands.json
+                  strip-flags.py
                 '';
                 helperT = pkgs'.writeShellScriptBin "T" ''
                   if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
