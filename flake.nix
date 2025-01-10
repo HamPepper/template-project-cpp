@@ -1,6 +1,4 @@
 {
-  description = "template-project-cpp";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -14,60 +12,30 @@
     dream2nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, flake-parts, git-hooks, dream2nix, ... } @ inputs:
-    let
-      overlayThis = final: prev:
-        {
-          tpcpp = prev.callPackage ./default.nix {
-            version = self.rev or self.dirtyRev or "git";
-          };
+  outputs = { self, nixpkgs, flake-parts, git-hooks, dream2nix } @ inputs:
+    flake-parts.lib.mkFlake { inherit inputs; } ({ ... }: {
+      imports = [ git-hooks.flakeModule ];
 
-          helperB = prev.writeShellScriptBin "B" ''
-            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
-            cmake --preset debug && cmake --build build/Debug
-          '';
-          helperC = prev.writeShellScriptBin "C" ''
-            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
-            rm -rf build
-          '';
-          helperD = prev.writeShellScriptBin "D" ''
-            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
-            cmake --preset debug
-            compdb -p build/Debug/ list > compile_commands.json
-          '';
-          helperT = prev.writeShellScriptBin "T" ''
-            if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
-            cmake --preset debug && cmake --build build/Debug
-            ctest --test-dir build/Debug --output-on-failure
-          '';
-        };
-    in
-    flake-parts.lib.mkFlake { inherit inputs; } ({ getSystem, ... }: {
-      imports = [
-        git-hooks.flakeModule
-      ];
+      systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
 
-      #systems = [ "x86_64-linux" "aarch64-linux" "x86_64-darwin" "aarch64-darwin" ];
-      # darwin's still on clang 16, which disables various c++ 20 features,
-      # such as std::format, by default.
-      # disable darwin support for now.
-      systems = [ "x86_64-linux" "aarch64-linux" ];
-
-      perSystem =
-        { system, inputs', pkgs', config, ... }:
+      perSystem = { config, system, inputs', pkgs', ... }:
+        let
+          clang-tools-18 = pkgs'.llvmPackages_18.clang-tools;
+          clang-format = pkgs'.runCommand "clang-format-wrapper" { } ''
+            mkdir -p $out/bin
+            ln -s ${clang-tools-18}/bin/clang-format $out/bin/clang-format
+          '';
+        in
         rec {
-          _module.args.pkgs' = import self.inputs.nixpkgs {
-            inherit system;
-            overlays = [ overlayThis ];
-          };
+          _module.args.pkgs' = import self.inputs.nixpkgs { inherit system; };
 
           pre-commit = {
             check.enable = true;
-
             settings.src = ./.;
             settings.hooks = {
               clang-format = {
                 enable = true;
+                package = clang-format;
                 types_or = pkgs'.lib.mkForce [ "c++" ];
               };
               editorconfig-checker.enable = true;
@@ -87,34 +55,51 @@
                 }
               ];
             };
-            tpcpp = pkgs'.tpcpp;
+
+            tpcpp = pkgs'.callPackage ./default.nix {
+              version = self.rev or self.dirtyRev or "git";
+            };
           };
 
           devShells.default = pkgs'.mkShell {
-            inputsFrom = [ packages.pyprojectTpcpp.devShell ];
+            name = "template-project-cpp";
 
-            name = "template-project-cpp-dev";
+            inputsFrom = [
+              packages.pyprojectTpcpp.devShell
+              packages.tpcpp
+            ];
 
-            buildInputs = with pkgs'; [
-              cmake
-              ninja
+            nativeBuildInputs = config.pre-commit.settings.enabledPackages;
 
-              # utilities
-              dos2unix
-              time # measure memory usage, use \time to invoke in zsh
+            buildInputs =
+              let
+                helperB = pkgs'.writeShellScriptBin "B" ''
+                  if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
+                  cmake --preset debug && cmake --build build/Debug
+                '';
+                helperD = pkgs'.writeShellScriptBin "D" ''
+                  if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
+                  cmake --preset debug
+                  compdb -p build/Debug/ list > compile_commands.json
+                '';
+                helperT = pkgs'.writeShellScriptBin "T" ''
+                  if [ -n "$DIRENV_DIR" ]; then cd ''${DIRENV_DIR:1}; fi
+                  cmake --preset debug && cmake --build build/Debug
+                  ctest --test-dir build/Debug --output-on-failure
+                '';
 
-              helperB
-              helperC
-              helperD
-              helperT
+                debugTools = (with pkgs';
+                  if stdenv.hostPlatform.isLinux
+                  then [ gdb ] else [ lldb ]
+                );
 
-              # doc
-              doxygen
-              graphviz
-            ]
-            ++ config.pre-commit.settings.enabledPackages
-            ++ pkgs'.lib.optionals pkgs'.stdenv.isLinux
-              [ gdb cgdb ];
+                clang-tools = pkgs'.llvmPackages.clang-tools;
+                clangd = pkgs'.runCommand "clangd-wrapper" { } ''
+                  mkdir -p $out/bin
+                  ln -s ${clang-tools}/bin/clangd $out/bin/clangd
+                '';
+              in
+              [ pkgs'.dos2unix clangd helperB helperD helperT ] ++ debugTools;
 
             hardeningDisable = [ "fortify" ];
 
