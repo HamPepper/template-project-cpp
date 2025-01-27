@@ -21,7 +21,7 @@ jobs:
               with:
                   submodules: recursive
             - uses: DeterminateSystems/nix-installer-action@v16
-            - uses: DeterminateSystems/magic-nix-cache-action@v8
+            - uses: DeterminateSystems/magic-nix-cache-action@v9
             - run: nix develop -c B
             - run: nix develop -c T
             - run: nix develop -c D
