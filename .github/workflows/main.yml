@@ -21,7 +21,6 @@ jobs:
               with:
                   submodules: recursive
             - uses: DeterminateSystems/nix-installer-action@v16
-            - uses: DeterminateSystems/magic-nix-cache-action@v8
             - run: nix develop -c B
             - run: nix develop -c T
             - run: nix develop -c D
@@ -59,5 +58,4 @@ jobs:
             - run: cmake --preset msvc
             - run: cmake --build --preset debug
             - run: ctest --test-dir build -C Debug --output-on-failure
-            # FIXME: doxygen can't be installed with winget due to hash mismatch
-            #- run: cmake --build --preset debug --target doc
+            - run: cmake --build --preset debug --target doc
