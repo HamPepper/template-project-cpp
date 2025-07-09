@@ -20,7 +20,7 @@ jobs:
             - uses: actions/checkout@v4
               with:
                   submodules: recursive
-            - uses: DeterminateSystems/nix-installer-action@v17
+            - uses: DeterminateSystems/nix-installer-action@v18
             - run: nix develop -c B
             - run: nix develop -c T
             - run: nix develop -c D
