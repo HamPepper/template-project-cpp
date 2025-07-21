@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['runtimeerror_0',['RuntimeError',['../structtpcpp_1_1_runtime_error.html',1,'tpcpp']]]
+  ['runtimeerror_0',['RuntimeError',['../structtpcpp_1_1RuntimeError.html',1,'tpcpp']]]
 ];
