@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scanner_0',['Scanner',['../classtpcpp_1_1Scanner.html',1,'tpcpp']]]
+  ['scanner_0',['Scanner',['../classtpcpp_1_1_scanner.html',1,'tpcpp']]]
 ];
