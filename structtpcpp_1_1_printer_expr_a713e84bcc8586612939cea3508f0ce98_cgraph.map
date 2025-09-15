@@ -1,6 +1,0 @@
-<map id="tpcpp::PrinterExpr::print" name="tpcpp::PrinterExpr::print">
-<area shape="rect" id="Node000001" title="Print a tpcpp::Expr to stdout." alt="" coords="5,29,132,70"/>
-<area shape="rect" id="Node000002" href="$structtpcpp_1_1_printer_expr.html#a7e0786e0b9019fc3fdf65a7e3969d14c" title="Convert a tpcpp::Expr to a string." alt="" coords="180,29,306,70"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,47,164,47,164,52,132,52"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="209,29,208,19,213,10,225,5,243,3,262,5,273,11,271,16,260,10,243,8,227,10,217,14,213,20,215,28"/>
-</map>
